@@ -1,0 +1,441 @@
+#maindiv {
+  height: 100px;
+  width: 99%;
+  display: flex;
+  position: fixed;
+  background-color: white;
+  z-index: 1;
+}
+
+#logo {
+  height: 100px;
+  width: 150px;
+  padding-left: 200px;
+}
+
+#navbar {
+  align-items: center;
+  align-content: center;
+  padding-left: 150px;
+}
+
+ul {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+li {
+  list-style-type: none;
+}
+
+button {
+  font-family: Arial, Tahoma, Bitstream Vera Sans, sans-serif;
+  font-weight: 550;
+  border: none;
+  height: 40px;
+  width: 100px;
+  border-radius: 50px;
+  background-color: white;
+}
+
+button:hover {
+  text-decoration: underline;
+  background-color: #f3f2f6;
+}
+
+#navbtn {
+  padding-left: 150px;
+  align-content: center;
+  text-decoration: none;
+}
+
+#singin {
+  background-color: black;
+  color: white;
+}
+
+#singin a{
+  color: white;
+  text-decoration: none;
+}
+
+#hero {
+  padding-top: 100px;
+  height: 1000px;
+  width: 100%;
+  text-align: center;
+}
+
+#hero_1 {
+  font-size: 50px;
+  font-weight: 750;
+  font-family: Arial, Tahoma, Bitstream Vera Sans, sans-serif;
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+#menudiv {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  font-family: Arial, Tahoma, Bitstream Vera Sans, sans-serif;
+}
+
+.link{
+  color: black;
+  text-decoration: none;
+}
+
+#menudiv p:hover {
+  text-decoration: underline;
+}
+
+#btn {
+  height: 50px;
+  width: 700px;
+  border: 1px solid #c5c2cf;
+  background-color: #f3f2f6;
+  font-family: Arial, Tahoma, Bitstream Vera Sans, sans-serif;
+  font-size: large;
+  color: #c5c2cf;
+}
+
+#search {
+  position: absolute;
+  left: 375px;
+  top: 345px;
+}
+
+#innerbtn {
+  background-color: #34e0a1;
+  position: relative;
+  right: 110px;
+}
+
+#hero_3 {
+  background-image: url(hero_1.png);
+  background-size: cover;
+  background-color: #d9d3fc;
+  height: 500px;
+  width: 1130px;
+  position: relative;
+  top: 80px;
+  left: 200px;
+  border-radius: 20px;
+}
+
+#hero_3 div {
+  height: 150px;
+  width: 300px;
+  font-size: 25px;
+  font-family: Arial, Tahoma, Bitstream Vera Sans, sans-serif;
+  position: relative;
+  top: 100px;
+  left: 200px;
+}
+
+#hero div h4 {
+  height: 100px;
+  width: 440px;
+}
+
+#mapbtn {
+  height: 50px;
+  width: 200px;
+  background-color: #301d49;
+  color: white;
+}
+
+#heromain {
+  font-family: Arial, Tahoma, Bitstream Vera Sans, sans-serif;
+  padding-left: 200px;
+  padding-right: 170px;
+}
+
+.heromainimg {
+  height: 272px;
+  width: 1108px;
+  display: flex;
+  gap: 10px;
+}
+.heromainimg1 {
+  height: 272px;
+  width: 272px;
+  background-image: url(caption.jpg);
+  background-size: cover;
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+  border-radius: 15px;
+}
+
+.heromainimg1 a{
+  color: white;
+  text-decoration: none;
+}
+
+.heromainimg2 {
+  height: 272px;
+  width: 272px;
+  background-image: url(caption-1.jpg);
+  background-size: cover;
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+  border-radius: 15px;
+}
+.heromainimg3 {
+  height: 272px;
+  width: 272px;
+  display: inline-block;
+  background-image: url(caption-2.jpg);
+  background-size: cover;
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+  border-radius: 15px;
+}
+.heromainimg4 {
+  height: 272px;
+  width: 272px;
+  background-image: url(caption-3.jpg);
+  background-size: cover;
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+  border-radius: 15px;
+}
+.heromainimg5 {
+  height: 272px;
+  width: 272px;
+  background-image: url(caption-4.jpg);
+  background-size: cover;
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+  border-radius: 15px;
+}
+.heromainimg6 {
+  height: 272px;
+  width: 272px;
+  background-image: url(caption-5.jpg);
+  background-size: cover;
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+  border-radius: 15px;
+}
+.heromainimg7 {
+  height: 272px;
+  width: 272px;
+  background-image: url(caption-6.jpg);
+  background-size: cover;
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+  border-radius: 15px;
+}
+.heromainimg8 {
+  height: 272px;
+  width: 272px;
+  background-image: url(caption-7.jpg);
+  background-size: cover;
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+  border-radius: 15px;
+}
+.heromainimg9 {
+  height: 272px;
+  width: 272px;
+  background-image: url(caption-8.jpg);
+  background-size: cover;
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+  border-radius: 15px;
+}
+.heromainimg10 {
+  height: 272px;
+  width: 272px;
+  background-image: url(caption-9.jpg);
+  background-size: cover;
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+  border-radius: 15px;
+}
+.heromainimg11 {
+  height: 272px;
+  width: 272px;
+  background-image: url(caption-10.jpg);
+  background-size: cover;
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+  border-radius: 15px;
+}
+.heromainimg12 {
+  height: 272px;
+  width: 272px;
+  background-image: url(caption-11.jpg);
+  background-size: cover;
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+  border-radius: 15px;
+}
+
+.colordiv {
+  background-color: #faf1ed;
+  height: 300px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 40px;
+}
+
+.heromainimg13 {
+  height: 272px;
+  width: 272px;
+  background-image: url(caption-12.jpg);
+  background-size: cover;
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+  border-radius: 15px;
+}
+.heromainimg14 {
+  height: 272px;
+  width: 272px;
+  background-image: url(caption-13.jpg);
+  background-size: cover;
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+  border-radius: 15px;
+}
+.heromainimg15 {
+  height: 272px;
+  width: 272px;
+  background-image: url(caption-14.jpg);
+  background-size: cover;
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+  border-radius: 15px;
+}
+
+.heromainimg16 {
+  height: 272px;
+  width: 272px;
+  background-image: url(caption-15.jpg);
+  background-size: cover;
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+  border-radius: 15px;
+}
+.heromainimg17 {
+  height: 272px;
+  width: 272px;
+  background-image: url(caption-16.jpg);
+  background-size: cover;
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+  border-radius: 15px;
+}
+.heromainimg18 {
+  height: 272px;
+  width: 272px;
+  display: inline-block;
+  background-image: url(caption-17.jpg);
+  background-size: cover;
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+  border-radius: 15px;
+}
+
+.heromainimg19 {
+  height: 272px;
+  width: 272px;
+  background-image: url(caption-18.jpg);
+  background-size: cover;
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+  border-radius: 15px;
+}
+
+#footer {
+  height: 750px;
+  width: 100%;
+  background-color: #fff7e1;
+}
+
+#footerimg {
+  background-image: url(footer.png);
+  background-size: cover;
+  height: 700px;
+  width: 700px;
+  position: absolute;
+  left: 650px;
+}
+
+#footertxt {
+  height: 520px;
+  width: 450px;
+  font-family: Arial, Tahoma, Bitstream Vera Sans, sans-serif;
+  font-size: 25px;
+  font-weight: 900;
+  position: relative;
+  top: 100px;
+  left: 200px;
+}
+#footerbtn {
+  height: 40px;
+  width: 150px;
+  background-color: #000000;
+  color: white;
+}
+
+#footer1 {
+  height: 450px;
+  width: 100%;
+  background-color: #faf1ed;
+}
+
+#footer1txt {
+  height: 390px;
+  width: 93%;
+  font-family: "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+  font-size: 18px;
+  display: flex;
+  position: relative;
+  top: 50px;
+  left: 100px;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+#footer_logo {
+  height: 50px;
+  width: 50px;
+  display: flex;
+}
+
+#copyr {
+  font-size: 10px;
+  font-family: "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+}
+
+#country {
+  width: 200px;
+  height: 35px;
+  border-radius: 10px;
+}

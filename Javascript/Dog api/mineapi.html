@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+<style>
+  #dog {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .img {
+    height: 200px;
+    display: flex;
+    width: 200px;
+    object-fit: cover;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+  }
+
+</style>
+<body>
+  
+<h1> api</h1>
+<div id="main">
+  <input type="text" id="breed" placeholder="Enter dog breed">
+</div>
+<button id="btn">search</button>
+<div id="dog"></div>
+  
+</body>
+</html>
+<script>
+ let mainDiv = document.getElementById("main");
+ let btn = document.getElementById("btn");
+
+  async function data() {
+   
+    let br = document.getElementById("breed");
+    br = br.value
+
+    let res = await fetch(`https://dog.ceo/api/breed/${br}/images`);
+
+    res = await res.json();
+
+    display(res);
+    console.log(res)
+    
+  }
+  btn.addEventListener("click",()=>{
+    data();
+  });
+
+  function display(data){
+
+    mainDiv.innerHTML=""
+
+    console.log(data.message,"message")
+
+    data.message.forEach((el) => {
+
+      let innerDiv = document.createElement("div")
+
+      let img = document.createElement("img")
+      img.src = el
+
+
+      img.className = "img"
+
+      innerDiv.append(img)
+
+      mainDiv.append(innerDiv)
+      
+    });
+  }
+  
+</script>

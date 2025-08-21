@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telecom Service</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #a2c9f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        select, button {
+            padding: 10px;
+            font-size: 16px;
+            width: 80%;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #28a745;
+        }
+
+        #error {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Telecom Call Service</h1>
+        <label for="language">Select a language:</label>
+        <select id="language">
+            <option value="1">English</option>
+            <option value="2">Hindi</option>
+            <option value="3">Gujarati</option>
+        </select><br><br>
+        <button onclick="selectLanguage()">Proceed</button>
+        <p id="result"></p>
+        <p id="error"></p>
+    </div>
+
+    <script>
+        function selectLanguage() {
+            const languageChoice = document.getElementById('language').value;
+            let responseMessage = '';
+
+            document.getElementById('result').innerText = "";
+            document.getElementById('error').innerText = "";
+
+            switch (languageChoice) {
+                case '1':
+                    responseMessage = "You have selected English. How may I assist you today?";
+                    break;
+                case '2':
+                    responseMessage = "आपने हिंदी चुना है। मैं आपकी किस प्रकार सहायता कर सकता हूँ?";
+                    break;
+                case '3':
+                    responseMessage = "તમે ગુજરાતી પસંદ કર્યો છે. હું તમારી કેવી રીતે મદદ કરી શકું?";
+                    break;
+                default:
+                    responseMessage = "❌ Invalid selection. Please choose a valid language.";
+            }
+
+            document.getElementById('result').innerText = responseMessage;
+        }
+    </script>
+</body>
+</html>

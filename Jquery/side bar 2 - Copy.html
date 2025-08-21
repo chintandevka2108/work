@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sidebar</title>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<style>
+    * {
+        margin: 0%;
+        padding: 0%;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+    }
+
+    .header {
+        height: 50px;
+        width: 100%;
+        position: fixed;
+        border: 1px solid black;
+        background-color: #262626;
+        align-content: center;
+    }
+
+    .header img {
+        height: 20px;
+        margin-left: 30px;
+    }
+
+    .header button {
+        height: 35px;
+        width: 100px;
+        border-radius: 5px;
+        color: white;
+        background-color: #82B440;
+        float: right;
+        margin-right: 20px;
+        font-size: 15px;
+    }
+
+    
+.container {
+    display: flex;
+}
+
+.con-1 {
+    position: fixed;
+    top: 8vh;
+    height: 100vh;
+    width: 18%;
+    transition-duration: 1s;
+    overflow-y: scroll;
+    /* margin-top: 2.5%; */
+    background-color: rgb(191, 191, 194);
+    /* border: 1px solid #000;  */
+}
+
+.con-1 img {
+    margin: 5% 0% 0% 10%;
+}
+
+.h-4 {
+    /* font-size: 1.2rem; */
+    margin: 5% 0% 0% 10%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.h-3 {
+    margin: 5% 0% 0% 10%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.heading {
+    width: 90%;
+    /* border: 1px solid #000;  */
+    margin: 10% 0% 10% 10%;
+    display: flex;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.heading p {
+    font-size: 1.1rem;
+    margin-left: 5%;
+}
+
+.heading i {
+    font-size: 1.5rem;
+}
+
+.heading b {
+    font-size: 1.2rem;
+}
+
+.content {
+    margin: 5% 0% 0% 20%;
+    line-height: 40px;
+    display: none;
+    /* font-size: 1rem; */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.content p:hover {
+    height: 40px;
+    /* margin-left: 5%; */
+    padding-left: 5%;
+    width:85%;
+    border-radius: 10px;
+    background-color: rgb(9, 127, 245);
+}
+
+.con-2 {
+    position: fixed;
+    right: 0%;
+    top: 8vh;
+    /* overflow-x: scroll; */
+    height: 100vh;
+    width: 82%;
+    transition-duration: 1s;
+    /* border: 1px solid #000; */
+}
+
+.navbar {
+    position: fixed;
+    height: 8vh;
+    z-index: 2;
+    width: 100%;
+    background-color: rgb(212, 180, 180);
+    border-bottom: 2px solid rgb(68, 64, 64);
+    /* border: 1px solid #000;  */
+}
+
+.navbar i {
+    margin-left: 1%;
+    padding: 1%;
+    font-size: 1.2rem;
+}
+
+.navbar img {
+    margin: 0% 0% 0% 50%;
+}
+
+.fa-bell {
+    margin: 1%;
+    font-size: 1.2rem;
+}
+
+.navbar b {
+    font-weight: 400;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#heading {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 5% 0% 0% 2%;
+}
+.heading:hover{
+    background-color: #e9f0ea;
+}
+.text {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0% 0% 0% 2%;
+}
+
+.rop {
+    display: grid;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    gap: 10px;
+    margin: 2.5% 0% 0% 1.9%;
+    grid-template-columns: repeat(auto-fit, 32.5%);
+}
+
+.box-1 {
+    height: 130px;
+    width: 100%;
+    padding: 5%;
+    border-radius: 10px;
+    border: 1px solid #a5a5a5;
+}
+
+.box-1 h1 {
+    margin: 2% 0% 0% 0%;
+    font-weight: 500;
+}
+
+.Up {
+    margin-left: 82%;
+    border-radius: 10px;
+    margin-top: -10%;
+    color: rgb(5, 150, 104);
+    background-color: rgb(210, 250, 229);
+}
+
+.down {
+    margin-left: 82%;
+    border-radius: 10px;
+    margin-top: -10%;
+    background-color: rgb(255, 227, 227);
+    color: rgb(219, 37, 37);
+}
+
+.graph {
+    display: grid;
+    grid-template-columns: 100% 30%;
+}
+
+.graph-1 {
+    height: 80vh;
+    width: 100%;
+    border: 1px solid #000;
+}
+
+.sales {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: grid;
+    margin: 2.5% 0% 0% 1.9%;
+    grid-template-columns: 65% 35%;
+}
+
+.sales-1 {
+    height: 60vh;
+    width: 98%;
+    padding: 2.5%;
+    border-radius: 10px;
+    border: 1px solid #a5a5a5;
+}
+
+.s-r {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-1 {
+    height: 40px;
+    border-radius: 10px;
+    width: 130px;
+    background: none;
+    font-size: 1.1rem;
+}
+
+.s-r h2 {
+    font-weight: 500;
+}
+
+.sales-1 h2 {
+    font-weight: 500;
+}
+
+.latest {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: grid;
+    margin: 2.5% 0% 0% 1.9%;
+    grid-template-columns: 65% 35%;
+}
+
+.l-o {
+    display: flex;
+    margin-bottom: 5%;
+    justify-content: space-between;
+}
+
+.btn-2 {
+    height: 40px;
+    border-radius: 10px;
+    width: 130px;
+    background: none;
+    font-size: 1.1rem;
+}
+
+.table {
+    height: auto;
+    width: 100%;
+}
+
+.head th {
+    font-weight: 500;
+    padding: 2%;
+    background-color: rgb(247, 249, 250);
+    border-bottom: 1px solid black;
+}
+
+.body td {
+    font-weight: 500;
+    padding: 2.2%;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+.body:hover {
+    background-color: rgb(215, 215, 215);
+}
+
+.orders {
+    height: auto;
+    width: 98%;
+    padding: 2.2%;
+    border-radius: 10px;
+    border: 1px solid #a5a5a5;
+}
+
+.ord {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-3 {
+    height: 35px;
+    border-radius: 10px;
+    width: 100px;
+    background: none;
+    font-size: 0.9rem;
+}
+
+.table-1 {
+    height: auto;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.head-1 th {
+    font-weight: 500;
+    padding: 2%;
+    background-color: rgb(247, 249, 250);
+    border-bottom: 1px solid black;
+}
+
+.body-1 td {
+    font-weight: 500;
+    padding: 2.2%;
+    border-bottom: 1px solid black;
+}
+
+.body-1 tr:hover {
+    background-color: rgb(215, 215, 215);
+}
+
+.body-1 img {
+    height: 70px;
+    width: 70px;
+    border-radius: 5px;
+    transition: 1s;
+}
+
+/* side bar 1 code  */
+
+.sidebar {
+    width: 5%;
+}
+
+.sidebar img {
+    height: 30px;
+    width: 60px;
+    /* margin: 10%; */
+}
+
+.sidebar i {
+    margin: 20%;
+}
+
+.sidebar p {
+    display: none;
+}
+
+.sidebar h4 {
+    /* font-size: 0.8rem; */
+    margin: 20%;
+}
+
+.sidebar h3 {
+    display: none;
+}
+
+/* side bar 2 code */
+
+.sidebar-1 {
+    width: 95%;
+}
+    .rightdiv {
+    /* position: fixed; */
+    right: 0%;
+    top: 8vh;
+    overflow-x: scroll;
+    height: 100vh;
+    width: 100%;
+    transition-duration: 1s;
+    }
+
+    .rig-div {
+        border: 1px solid #000;
+    }
+
+    .rig-nav button {
+        height: 40px;
+        width: 40px;
+        margin-top: 6%;
+        border: 1px solid #000;
+        background-color: white;
+        margin-left: 10px;
+    }
+
+    .rig-nav button:hover {
+        background-color: #F0F0F0;
+        border-radius: 50%;
+    }
+
+    .rig-item {
+        border: 1px solid #000;
+        /* margin-top: 5%; */
+        border: white;
+    }
+
+    .rig-rig {
+        border: 1px solid #d1cbcb;
+        background-color: #6B7280;
+        width: 100%;
+        display: inline-block;
+        /* height: 200vh; */
+        display: flex;
+    }
+
+    .rig-head {
+        margin-top: 5%;
+        border: 1px solid #f7f7f7;
+        margin-left: 2%;
+        color: #080808;
+        width: 30%;
+        height: 6%;
+    }
+
+    .date-range {
+        border: 1px solid #000;
+        margin-left: 28%;
+        margin-top: 2%;
+        border-radius: 25%;
+        text-align: center;
+        align-items: center;
+        height: 2%;
+        width: 25%;
+        background-color: #F0F0F0;
+    }
+
+    .filter button {
+        border: 1px solid #000;
+        margin-top: 10%;
+        width: 150px;
+        height: 2%;
+    }
+
+    .card {
+        border: 1px solid #000;
+        background-color: #F0F0F0;
+        margin-top: 2%;
+    }
+
+    .revenu {
+        margin: 3%;
+        display: flex;
+        /* border: 1px solid #000; */
+        justify-content: space-evenly;
+        gap: 10px;
+    }
+
+    .revenu-1 {
+        border: 1px solid #000;
+        border-radius: 10px;
+        background-color: #F0F0F0;
+        width: 35%;
+    }
+
+    .revenu-2 {
+        border: 1px solid #000;
+        border-radius: 10px;
+        background-color: #F0F0F0;
+        width: 35%;
+    }
+
+    .revenu-3 {
+        border: 1px solid #000;
+        border-radius: 10px;
+        background-color: #F0F0F0;
+        width: 35%;
+    }
+
+    .up {
+        border: 1px solid #000;
+        margin-left: 70%;
+        margin-bottom: 2%;
+        width: 22%;
+        color: #0bee1e;
+        background-color: #4d9c35;
+    }
+
+    .down {
+        border: 1px solid #000;
+        margin-left: 70%;
+        margin-bottom: 2%;
+        width: 20%;
+        color: #940404;
+        background-color: #fa3131;
+    }
+
+    .chart {
+        height: 100vh;
+        margin-left: 1%;
+        width: 100%;
+        display: flex;
+    }
+
+    .chart-1 {
+        height: 90vh;
+        margin-top: 2%;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 55%;
+        border-radius: 20px;
+        border: 1px solid #3004f5;
+        background-color: #F0F0F0;
+}
+.chart-1 h4{
+    margin-left: 2%;
+    display: flex;
+}
+.chart-1 button{
+    margin-left: 50vh;
+    margin-bottom: 20vh;
+}
+    .chart-2 {
+        height: 90vh;
+        margin-top: 2%;
+        margin-left: 2%;
+        border-radius: 20px;
+        width: 40%;
+        border: 1px solid #adf504;
+        background-color: #F0F0F0;
+    }
+.chart-2-text{
+        margin-top: 10%;
+        margin-left: 10%;
+        margin-bottom: 10%;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+}
+
+    .chart-a {
+        height: 100vh;
+        margin-left: 2%;
+        width: 100%;
+        display: flex;
+    }
+
+    .lo {
+        height: 100vh;
+        width: 55%;
+        border-radius: 20px;
+        border: 1px solid #3004f5;
+        background-color: #F0F0F0;
+    }
+
+    .lo-head {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        justify-content: space-between;
+        display: flex;
+        width: 90%;
+    }
+
+    .lo-head a {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: #000;
+        border-radius: 5px;
+        text-align: center;
+        width: 20%;
+        text-decoration: none;
+        border: 1px solid #2c2a2a;
+    }
+
+    .lo-item-1 {
+        justify-content: space-between;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .lo-item-1 table th {
+        margin-top: 10%;
+        padding: 16px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    }
+
+    .lo-item-1 table td {
+        padding: 18px;
+        font-size: 15px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .lo-item-1 td:hover {
+        background-color: #f2f8f3;
+    }
+
+    .ts {
+        height: 100vh;
+        margin-left: 2%;
+        width: 40%;
+        border: 1px solid #adf504;
+        border-radius: 20px;
+        background-color: #F0F0F0;
+    }
+
+    .ts-head {
+        margin-top: 4%;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        justify-content: space-between;
+        display: flex;
+        width: 90%;
+    }
+
+    .ts-head a {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: #000;
+        border-radius: 5px;
+        text-align: center;
+        width: 30%;
+        text-decoration: none;
+        border: 1px solid #2c2a2a;
+    }
+
+    .ts-item table th {
+        /* padding: 40px;
+        justify-content: end; */
+        padding-top: 12px;
+        padding-left: 80px;
+    }
+
+    .ts-item table td {
+        padding-left: 80px;
+        text-align: center;
+    }
+
+    .ts-item td img {
+        align-items: center;
+        text-align: center;
+        margin-top: 20%;
+        width: 20%;
+    }
+
+    .ts-item td:hover {
+        background-color: #f7f7f7;
+        transition: 0.3s;
+    }
+
+    .copyright {
+        display: flex;
+        margin-top: 2%;
+        justify-content: space-between;
+
+    }
+
+    .copy-1 {
+        margin-left: 2%;
+        color: #352c2c;
+    }
+
+    .copy-2 a {
+        color: #352c2c;
+        justify-content: space-between;
+        text-decoration: none;
+    }
+</style>
+
+<body>
+    <div class="header">
+        <img src="c:\Users\admin\Downloads\envato_market-dde916a48af7413e54aa058fe7ae6856752fca799da4bec355f00aea904bfa19.svg"
+            alt="logo image">
+        <button>Buy Now</button>
+    </div>
+ <!--  -->
+ <div class="container">
+    <div class="con-1">
+        <img src="https://elstar.themenate.net/img/logo/logo-light-full.png" alt="">
+        <h4 class="h-4"> APPS </h4>
+        <div class="text-1">
+            <div class="heading">
+                <i class="fa-solid fa-chart-simple"></i>
+                <p> Project </p>
+            </div>
+            <div class="content">
+                <p> Dashbord </p>
+                <p> Project List </p>
+                <p> Scrum Board </p>
+                <p> Issue </p>
+            </div>
+        </div>
+        <div class="text-1">
+            <div class="heading">
+                <i class="fa-solid fa-users"></i>
+                <p> CRM </p>
+            </div>
+            <div class="content">
+                <p> Dashbord </p>
+                <p> Calander </p>
+                <p> Custmores </p>
+                <p> Custmores Details </p>
+                <p> Mail </p>
+            </div>
+        </div>
+        <div class="text-1">
+            <div class="heading">
+                <i class="fa-solid fa-chart-line"></i>
+                <p> Sales </p>
+            </div>
+            <div class="content">
+                <p> Dashbord </p>
+                <p> Project List </p>
+                <p> Product Edit </p>
+                <p> New Product </p>
+                <p> Order List </p>
+                <p> Order Details </p>
+            </div>
+        </div>
+        <div class="text-1">
+            <div class="heading">
+                <i class="fa-solid fa-dollar-sign"></i>
+                <p> Crypto </p>
+            </div>
+            <div class="content">
+                <p> Dashboard </p>
+                <p> protfolio </p>
+                <p> Market </p>
+                <p> Walltes </p>
+            </div>
+        </div>
+        <div class="text-1">
+            <div class="heading">
+                <i class="fa-solid fa-book-open"></i>
+                <p> Knowledge Base </p>
+            </div>
+            <div class="content">
+                <p> Help Center </p>
+                <p> Article </p>
+                <p> Manages Article </p>
+                <p> Edit Article </p>
+            </div>
+        </div>
+        <div class="text-1">
+            <div class="heading">
+                <i class="fa-regular fa-user"></i>
+                <p> Account </p>
+            </div>
+            <div class="content">
+                <p> Seetings </p>
+                <p> Invoice </p>
+                <p> Activity Log </p>
+                <p> KYC form </p>
+            </div>
+        </div>
+
+        <h4 class="h-4"> UI TOOL </h4>
+        <div class="text-1">
+            <div class="heading">
+                <i class="fa-brands fa-creative-commons-share"></i>
+                <p> Common </p>
+            </div>
+            <div class="content">
+                <p> Buttons </p>
+                <p> Grid </p>
+                <p> Typogrphy </p>
+                <p> Icons </p>
+            </div>
+        </div>
+        <div class="text-1">
+            <div class="heading">
+                <i class="fa-regular fa-comment"></i>
+                <p> Feedback </p>
+            </div>
+            <div class="content">
+                <p> Alert </p>
+                <p> Dialog </p>
+                <p> Drawer </p>
+                <p> Progress </p>
+                <p> Skeleten </p>
+                <p> Spinner </p>
+                <p> Toast </p>
+            </div>
+        </div>
+        <div class="text-1">
+            <div class="heading">
+                <i class="fa-solid fa-desktop"></i>
+                <p> Data Display </p>
+            </div>
+            <div class="content">
+                <p> Avatar </p>
+                <p> Badge </p>
+                <p> Calander </p>
+                <p> Cards </p>
+                <p> Tables </p>
+                <p> Tag </p>
+                <p> Timeline </p>
+                <p> Tooltip </p>
+            </div>
+        </div>
+        <div class="text-1">
+            <div class="heading">
+                <i class="fa-brands fa-wpforms"></i>
+                <p> Forms </p>
+            </div>
+            <div class="content">
+                <p> Check Box </p>
+                <p> Data Picker </p>
+                <p> Form Control </p>
+                <p> Input </p>
+                <p> Input Group </p>
+                <p> Radio </p>
+                <p> Segement </p>
+                <p> Select </p>
+                <p> Switcher </p>
+                <p> Time Input </p>
+                <p> Upload </p>
+            </div>
+        </div>
+        <div class="text-1">
+            <div class="heading">
+                <i class="fa-solid fa-chart-pie"></i>
+                <p> Graph </p>
+            </div>
+            <div class="content">
+                <p> Charts </p>
+                <p> Map </p>
+            </div>
+        </div>
+
+        <h4 class="h-4"> PAGES </h4>
+        <div class="heading">
+            <i class="fa-regular fa-hand"></i>
+            <p> Welcome </p> <br>
+        </div>
+        <div class="heading">
+            <i class="fa-solid fa-ban"></i>
+            <p> Access Denied </p>
+        </div>
+
+        <h3 class="h-3"> AUTHENTICATION </h3>
+        <div class="text-1">
+            <div class="heading">
+                <i class="fa-solid fa-shield-halved"></i>
+                <p> Sign In </p>
+            </div>
+            <div class="content">
+                <p> Simple </p>
+                <p> Side </p>
+                <p> Cover </p>
+            </div>
+        </div>
+        <div class="text-1">
+            <div class="heading">
+                <i class="fa-solid fa-user-plus"></i>
+                <p> Sign Up </p>
+            </div>
+            <div class="content">
+                <p> Simple </p>
+                <p> Side </p>
+                <p> Cover </p>
+            </div>
+        </div>
+        <div class="text-1">
+            <div class="heading">
+                <i class="fa-solid fa-lock"></i>
+                <p> Forgot Password </p>
+            </div>
+            <div class="content">
+                <p> Simple </p>
+                <p> Side </p>
+                <p> Cover </p>
+            </div>
+        </div>
+        <div class="text-1">
+            <div class="heading">
+                <i class="fa-solid fa-key"></i>
+                <p> Reset Password </p>
+            </div>
+            <div class="content">
+                <p> Simple </p>
+                <p> Side </p>
+                <p> Cover </p>
+            </div>
+        </div>
+
+        <h4 class="h-4"> GUIDE </h4>
+        <div class="text-1">
+            <div class="heading">
+                <i class="fa-solid fa-book"></i>
+                <p> Documentation </p>
+            </div>
+        </div>
+        <div class="text-1">
+            <div class="heading">
+                <i class="fa-solid fa-share-nodes"></i>
+                <p> Shared Components </p>
+            </div>
+        </div>
+        <div class="text-1">
+            <div class="heading">
+                <i class="fa-solid fa-x"></i>
+                <p> Utilities </p>
+            </div>
+        </div>
+        <div class="text-1">
+            <div class="heading">
+                <i class="fa-solid fa-code"></i>
+                <p> Changelog </p>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+    <div class="con-2">
+        <div class="navbar">
+            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <img src="https://elstar.themenate.net/img/countries/us.png" alt="">
+            <i class="fa-solid fa-gear"></i>
+            <i class="fa-regular fa-user"> </i>
+            <b> Carolyn Perkins </b>
+        </div>
+        <div class="rightdiv">
+                <div class="rig-nav">
+                    <!-- <button class="menu">
+                        <i class="fa-solid fa-bars fa-xl" style="color: #6B7280;"></i>
+                    </button>
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass fa-xl" style="color: #6B7280;"></i>
+                    </button>
+                    <button>
+                        <i class="fa-solid fa-bell"></i>
+                    </button> -->
+                    <!-- <img src="c:\Users\admin\OneDrive\Pictures\Camera Roll\round-national-flag-india-official-colors-isolated-grey-background-vector-illustration_509058-46.avif" alt=""> -->
+                  
+                    <div class="rig-item">
+                        <!-- <div class="rig-rig">
+                            <div class="rig-nav">
+                                <button><div class="filter">
+                                    <p><i class="fa-solid fa-filter"></i>Filter</button></p>
+                                </button>
+
+                            </div> -->
+                            <div class="rig-head">
+                                <h1>Sales Overview</h1>
+                                <p>View your current sales & summary</p>
+                            
+
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <div class="revenu">
+                        <div class="revenu-1">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <h3>Revenu</h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h3>$21,827.13</h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>vs. 3 months prior to 21 Jan</td>
+                                </tr>
+                            </table>
+                            <p class="up"><i class="fa-solid fa-arrow-up"></i>11.4%</p>
+                        </div>
+                        <div class="revenu-2">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <h3>Orders</h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h3>1,758</h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>vs. 3 months prior to 21 Jan</td>
+                                </tr>
+                            </table>
+                            <p class="down"><i class="fa-solid fa-arrow-down"></i>-3.2%</p>
+                        </div>
+                        <div class="revenu-3">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <h3>Purchases</h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h3>$7,249.31</h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>vs. 3 months prior to 21 Jan</td>
+                                </tr>
+                            </table>
+                            <p class="up"><i class="fa-solid fa-arrow-up"></i>5.7%</p>
+                        </div>
+                    </div>
+                    <div class="chart">
+                        <div class="chart-1">
+                            <h4>Sales Report</h4>
+                            <button>Export Report</button>
+
+                        </div>
+                        <div class="chart-2">
+                           <div class="chart-2-text">
+                            <p>824</p>
+                            <p>Product Sold</p>
+                           </div>
+
+                        </div>
+
+                    </div>
+                    <div class="chart-a">
+                        <div class="lo">.
+                            <div class="lo-head">
+                                <h3>Latest Orders</h3>
+                                <a href="#">View Order</a>
+                            </div>
+                            <div class="lo-item-1">
+                                <table>
+                                    <tr>
+                                        <th>ORDER</th>
+                                        <th>STATUS</th>
+                                        <th>DATE</th>
+                                        <th>CUSTOMER</th>
+                                        <th>PROFILE PROGRESS</th>
+                                    </tr>
+                                    <tr>
+                                        <td>#95954</td>
+                                        <td class="green" style="color:green;"><i class="fa-solid fa-circle"
+                                                style="color: #63E6BE;"></i>Paid</td>
+                                        <td>10/08/2022</td>
+                                        <td>Ron Vargas</td>
+                                        <td>$168.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#95423</td>
+                                        <td class="green" style="color:green;"><i class="fa-solid fa-circle"
+                                                style="color: #63E6BE;"></i>Paid</td>
+                                        <td>30/07/2022</td>
+                                        <td>Carolyn Hanso</td>
+                                        <td>$523.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#92903</td>
+                                        <td class="orange" style="color: rgb(226, 189, 22);"><i
+                                                class="fa-solid fa-circle" style="color: #FFD43B;"></i>Pending</td>
+                                        <td>18/07/2022</td>
+                                        <td>Gabriella May</td>
+                                        <td>$81.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#92627</td>
+                                        <td class="red" style="color:red;"><i class="fa-solid fa-circle"
+                                                style="color: #e90707;"></i>Failed</td>
+                                        <td>09/07/2022</td>
+                                        <td>Tara Fletcher</td>
+                                        <td>$279.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#89332</td>
+                                        <td class="green" style="color:green;"><i class="fa-solid fa-circle"
+                                                style="color: #63E6BE;"></i>Paid</td>
+                                        <td>02/06/2022</td>
+                                        <td>Eileen Horton</td>
+                                        <td>$597.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#86497</td>
+                                        <td class="red" style="color:red;"><i class="fa-solid fa-circle"
+                                                style="color: #e90707;"></i>Failed</td>
+                                        <td>19/03/2022</td>
+                                        <td>Lloyd Obrien</td>
+                                        <td>$189.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#86212</td>
+                                        <td class="green" style="color:green;"><i class="fa-solid fa-circle"
+                                                style="color: #63E6BE;"></i>Paid</td>
+                                        <td>09/03/2022</td>
+                                        <td>Tara Fletcher</td>
+                                        <td>$672.00</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="ts">
+                            <div class="ts-head">
+                                <h3>Top selling</h3>
+                                <a href="#">View Products</a>
+                            </div>
+                            <div class="ts-item">
+                                <table>
+                                    <tr>
+                                        <th>PRODUCT</th>
+                                        <th>SOLD</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="img"><img
+                                                src="C:\Users\admin\OneDrive\Pictures\Camera Roll\red headphone.jpg"
+                                                alt="red-headphone">Luminaire Giotto <br> Headphones</td>
+                                        <td>252</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="img"><img
+                                                src="C:\Users\admin\OneDrive\Pictures\Camera Roll\black sneker.jpeg"
+                                                alt="blacksne">Black Sneaker</td>
+                                        <td>186</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="img"><img
+                                                src="C:\Users\admin\OneDrive\Pictures\Camera Roll\grey hoodie.jpeg"
+                                                alt="greyhoodie">Gray Hoodies</td>
+                                        <td>166</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="img"><img
+                                                src="C:\Users\admin\OneDrive\Pictures\Camera Roll\blue bag.jpeg"
+                                                alt="greyhoodie">Blue Bag</td>
+                                        <td>93</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="img"><img
+                                                src="C:\Users\admin\OneDrive\Pictures\Camera Roll\brown strip watch.png"
+                                                alt="greyhoodie">Strip Analog <br> Watch</td>
+                                        <td>81</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="copyright">
+                        <div class="copy-1">
+                            <p>Copyright © 2024 Elstar All rights reserved.</p>
+                        </div>
+                        <div class="copy-2">
+                            <a href="#">Terms&Condistion</a> |
+                            <a href="#">Privacy&Policy</a>
+                        </div>
+                    </div>
+
+
+    </main>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+</html>
+
+
+<script>
+    $(document).ready(function () {
+        $('.fa-bars').click(function () {
+            $('.con-1').toggleClass('sidebar');
+            $('.con-2').toggleClass('sidebar-1');
+        })
+
+        $(".heading").click(function () {
+            $(this).parent(".text-1").find(".heading");
+            $(this).parent(".text-1").find(".content").slideToggle();
+            $(this).parent(".text-1").siblings(".text-1").find(".content").slideUp();
+        });
+          // pie chart
+
+          var options = {
+            series: [44, 55, 41, 17],
+            chart: {
+                type: 'donut',
+            },
+            legend: {
+                position: 'bottom',
+            },
+            labels: ["Device", "Watches", "Bags", "Shoes"],
+            responsive: [{
+                breakpoint: 480,
+                options: {
+                    chart: {
+                        width: 200
+                    },
+                }
+            }]
+        };
+
+        var chart = new ApexCharts(document.querySelector(".chart-2"), options);
+        chart.render();
+
+        // line chart
+
+        var options = {
+            series: [
+                {
+                    name: "Online Sales",
+                    data: [24, 33, 29, 36, 34, 43, 40, 47, 45, 48, 46, 55]
+                },
+                {
+                    name: "Marketing Sales",
+                    data: [20, 26, 23, 24, 22, 29, 27, 36, 32, 35, 32, 38]
+                }
+            ],
+            chart: {
+                height: 350,
+                type: 'line',
+                dropShadow: {
+                    enabled: true,
+                    color: '#000',
+                    top: 18,
+                    left: 7,
+                    blur: 10,
+                    opacity: 0.2
+                },
+                zoom: {
+                    enabled: false
+                },
+                toolbar: {
+                    show: false
+                }
+            },
+            colors: ['#77B6EA', '#545454'],
+            dataLabels: {
+                enabled: true,
+            },
+            stroke: {
+                curve: 'smooth'
+            },
+            title: {
+                text: 'Average High & Low Temperature',
+                align: 'left'
+            },
+            grid: {
+                borderColor: '#e7e7e7',
+                row: {
+                    colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
+                    opacity: 0.5
+                },
+            },
+            markers: {
+                size: 1
+            },
+            xaxis: {
+                categories: ['01 Jan', '02 Jan', '03 Jan', '04 Jan', '05 Jan', '06 Jan', '07 Jan', '08 Jan', '09 Jan', '10 Jan', '11 Jan', '12 Jan'],
+                title: {
+                    text: 'Month'
+                }
+            },
+            yaxis: {
+                title: {
+                    text: 'Temperature'
+                },
+                min: 10,
+                max: 60
+            },
+            legend: {
+                position: 'top',
+                horizontalAlign: 'right',
+                floating: true,
+                offsetY: -25,
+                offsetX: -5
+            }
+        };
+
+        var chart = new ApexCharts(document.querySelector(".chart-1"), options);
+        chart.render();
+
+    });
+    
+</script>

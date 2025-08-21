@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Farmie</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <style>
+        /* --- GLOBAL STYLES --- */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fdfdfd;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            color: #2c5c37; /* Dark Green */
+        }
+
+        .section-title {
+            color: #6c757d; /* Gray */
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-separator {
+            display: block;
+            margin: 1rem auto;
+        }
+
+        /* --- NAVBAR --- */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        .navbar-brand img {
+            max-height: 40px;
+        }
+        .navbar-nav .nav-link {
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: #2c5c37;
+        }
+        .nav-icons .btn {
+            color: #555;
+            font-size: 1.1rem;
+        }
+        .nav-icons .btn:hover {
+            color: #2c5c37;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero-section {
+            position: relative;
+            height: 60vh;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+        }
+        .hero-section::before { /* Dark overlay for text readability */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-title {
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+        }
+
+        /* --- CUSTOM BUTTON --- */
+        .btn-farmie {
+            background-color: #4a9a5d; /* Brighter Green */
+            color: white;
+            padding: 12px 30px;
+            font-weight: 500;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: none;
+        }
+        .btn-farmie:hover {
+            background-color: #2c5c37;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* --- SERVICE CARDS --- */
+        .service-card {
+            border: none;
+            background: #fff;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.07);
+            transition: all 0.3s ease;
+            border-radius: 10px;
+            padding: 1rem;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .service-card img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1rem;
+        }
+        .service-card .card-title {
+            font-weight: 600;
+            color: #333;
+        }
+
+        /* --- TEAM CARDS --- */
+        .team-card {
+            border: none;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.07);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .team-card img {
+            height: 350px;
+            width: 100%;
+            object-fit: cover; /* Prevents image stretching */
+            transition: transform 0.4s ease;
+        }
+        .team-card:hover img {
+            transform: scale(1.05);
+        }
+        .team-card .card-body {
+            background: #fff;
+        }
+        .team-card .card-title {
+            color: #2c5c37;
+            margin-bottom: 0.25rem;
+        }
+        .team-card .card-subtitle {
+            color: #6c757d;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("https://preview.colorlib.com/theme/farmie/img/bg-img/2.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+        footer a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: #fff;
+        }
+        footer h5 {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="https://preview.colorlib.com/theme/farmie/img/core-img/logo.png" alt="Farmie Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="1 home.html">Home</a></li>
+                <!-- <li class="nav-item"><a class="nav-link active" href="#">About</a></li> -->
+                <li class="nav-item"><a class="nav-link" href="3 our product.html">Our Product</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Farming Practice</a></li>
+                        <li><a class="dropdown-item" href="#">Shop</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#">News</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+            <div class="d-flex nav-icons">
+                <button class="btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button class="btn"><i class="fa-solid fa-cart-shopping"></i></button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<section class="hero-section" style="background-image: url('https://media.npr.org/assets/img/2014/06/23/brassicas-1-8f5bc6ee13f6206724925b5e83560b5942cc213d.jpg?s=800&c=85&f=webp');">
+    <div class="hero-content">
+        <h1 class="hero-title">About Us</h1>
+    </div>
+</section>
+
+<div class="container py-5 my-4">
+    <div class="row g-4 text-center">
+        <div class="col-6 col-md-4 col-lg">
+            <div class="service-card">
+                <img src="https://preview.colorlib.com/theme/farmie/img/core-img/digger.png" class="mx-auto" alt="Best Services">
+                <h5 class="card-title">Best Services</h5>
+            </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg">
+            <div class="service-card">
+                <img src="https://preview.colorlib.com/theme/farmie/img/core-img/windmill.png" class="mx-auto" alt="Farm Experiences">
+                <h5 class="card-title">Farm Experiences</h5>
+            </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg">
+            <div class="service-card">
+                <img src="https://preview.colorlib.com/theme/farmie/img/core-img/cereals.png" class="mx-auto" alt="100% Natural">
+                <h5 class="card-title">100% Natural</h5>
+            </div>
+        </div>
+        <div class="col-6 col-md-6 col-lg">
+            <div class="service-card">
+                <img src="https://preview.colorlib.com/theme/farmie/img/core-img/tractor.png" class="mx-auto" alt="Farm Equipment">
+                <h5 class="card-title">Farm Equipment</h5>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg">
+            <div class="service-card">
+                <img src="https://preview.colorlib.com/theme/farmie/img/core-img/sunrise.png" class="mx-auto" alt="Organic">
+                <h5 class="card-title">Organic</h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid p-0">
+    <div class="hero-section" style="height: 50vh; background-image: url('https://spiritualdream.net/wp-content/uploads/2024/01/purple-grapes-dream-meaning.webp');">
+        <div class="hero-content">
+            <a href="#" class="btn btn-light rounded-circle p-0" style="width: 80px; height: 80px; line-height: 80px;">
+                <i class="fa-solid fa-play fa-2x text-success"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="container py-5 my-5">
+    <div class="text-center mb-5">
+        <h4 class="section-title">MEET OUR TEAM</h4>
+        <h1 class="display-5">The Great Team Will Always Help You</h1>
+        <img src="https://preview.colorlib.com/theme/farmie/img/core-img/decor2.png" alt="decor" class="section-separator">
+    </div>
+    <div class="row g-4">
+        <div class="col-sm-6 col-lg-3">
+            <div class="card team-card">
+                <img src="https://preview.colorlib.com/theme/farmie/img/bg-img/20.jpg" alt="Carlos Bacca">
+                <div class="card-body p-4">
+                    <h5 class="card-title">Carlos Bacca</h5>
+                    <h6 class="card-subtitle mb-2">Coordinator</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+            <div class="card team-card">
+                <img src="https://preview.colorlib.com/theme/farmie/img/bg-img/21.jpg" alt="Emilia Clarke">
+                <div class="card-body p-4">
+                    <h5 class="card-title">Emilia Clarke</h5>
+                    <h6 class="card-subtitle mb-2">Controller</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+            <div class="card team-card">
+                <img src="https://preview.colorlib.com/theme/farmie/img/bg-img/22.jpg" alt="Brian Doherty">
+                <div class="card-body p-4">
+                    <h5 class="card-title">Brian Doherty</h5>
+                    <h6 class="card-subtitle mb-2">Sales Executive</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+            <div class="card team-card">
+                <img src="https://preview.colorlib.com/theme/farmie/img/bg-img/23.jpg" alt="Mary O’Connor">
+                <div class="card-body p-4">
+                    <h5 class="card-title">Mary O’Connor</h5>
+                    <h6 class="card-subtitle mb-2">Plan Manager</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-5">
+        <button class="btn-farmie">View All Members</button>
+    </div>
+</div>
+
+<footer class="text-white py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <img src="https://preview.colorlib.com/theme/farmie/img/core-img/logo.png" alt="Farmie Logo" class="mb-3 bg-white p-2 rounded">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In act honcus risus atiner Pellentesque risus.</p>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 120 Raymond Rd, New York</li>
+                    <li class="mb-2"><i class="fas fa-envelope me-2"></i> info.deercreative@gmail.com</li>
+                    <li><i class="fas fa-phone me-2"></i> +84 223 9000</li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h5 class="text-uppercase mb-4">Quick Link</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="#">Purchase</a></li>
+                    <li class="mb-2"><a href="#">Shipping</a></li>
+                    <li class="mb-2"><a href="#">Return</a></li>
+                    <li class="mb-2"><a href="#">Payments</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h5 class="text-uppercase mb-4">Recent News</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#">WA's largest farming business on the market</a>
+                        <p class="small text-white-50">Aug 18, 2025</p>
+                    </li>
+                    <li>
+                        <a href="#">Beef retail prices hit a record</a>
+                        <p class="small text-white-50">Aug 18, 2025</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h5 class="text-uppercase mb-4">Stay Connected</h5>
+                <p>Subscribe to our newsletter to get the latest updates.</p>
+                <div class="input-group mb-3">
+                    <input type="email" class="form-control" placeholder="Your Email" aria-label="Your Email">
+                    <button class="btn btn-success" type="button">Go</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

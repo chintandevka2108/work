@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University Website</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    /* Navbar */
+    .navbar-nav {
+      gap: 5px;
+    }
+    .callus {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    /* Hero */
+    .bdimg {
+      background: url(https://preview.colorlib.com/theme/universityedu/assets/img/hero/h1_hero1.jpg) center/cover no-repeat;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      padding: 40px 20px;
+    }
+    .bdtxt {
+      max-width: 600px;
+      color: white;
+    }
+
+    /* About */
+    .cnt1 {
+      background-color: #FCF2EB;
+      padding: 60px 15px;
+    }
+
+    /* Programs */
+    .cnt2 {
+      padding: 60px 15px;
+    }
+    .card:hover {
+      border-color: #007A5C;
+      transform: translateY(-5px);
+      transition: 0.3s;
+    }
+
+    /* Resources */
+    .cnt3 {
+      background-color: #F2FBF9;
+      padding: 60px 15px;
+    }
+    .box:hover {
+      color: #007A5C;
+      border-color: #007A5C;
+    }
+    .icon {
+      border: 2px solid black;
+      border-radius: 50%;
+    }
+
+    /* Top Stories */
+    .cntr5 {
+      margin-top: 80px;
+      padding: 0 15px;
+    }
+
+    /* Partners */
+    .colc {
+      text-align: center;
+      padding: 50px 20px;
+      background: #fff;
+    }
+    .colc h1 {
+      font-size: 32px;
+      font-weight: bold;
+    }
+    .carousel-item img {
+      max-height: 100px;
+      object-fit: contain;
+      margin: auto;
+    }
+
+    /* Trusted Section */
+    .rowm {
+      display: flex;
+      flex-wrap: wrap;
+      min-height: 60vh;
+    }
+    .img-1 {
+      flex: 1 1 100%;
+      min-height: 300px;
+      background: url(https://preview.colorlib.com/theme/universityedu/assets/img/gallery/visit2.jpg) center/cover no-repeat;
+    }
+    .text-1 {
+      flex: 1 1 100%;
+      background-color: #007A5C;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    @media (min-width: 768px) {
+      .img-1, .text-1 {
+        flex: 1 1 50%;
+        min-height: 500px;
+        text-align: left;
+        padding: 60px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="https://preview.colorlib.com/theme/universityedu/assets/img/logo/logo.png" alt=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-5">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Programs</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Blog</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+        <div class="d-flex callus">
+          <span class="me-3">Call Us : 0 (78) 675 3674</span>
+          <div>
+            <a href="#"><i class="fa-brands fa-square-facebook fa-lg mx-1" style="color:#3b5998;"></i></a>
+            <a href="#"><i class="fa-brands fa-square-twitter fa-lg mx-1" style="color:#1da1f2;"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin fa-lg mx-1" style="color:#1da1f2;"></i></a>
+            <a href="#"><i class="fa-brands fa-square-youtube fa-lg mx-1" style="color:#ff0000;"></i></a>
+            <a href="#"><i class="fa-solid fa-envelope fa-lg mx-1" style="color:#34a853;"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="bdimg">
+    <div class="bdtxt">
+      <h3>EDUCATION & SCHOOL</h3>
+      <h2>SHOWCASE COURSES,<br>EVENTS AND MORE!</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ut placeat molestias quidem nesciunt.</p>
+      <button class="btn btn-success">Get Started Now</button>
+    </div>
+  </div>
+
+  <!-- About -->
+  <div class="container-fluid cnt1">
+    <div class="row align-items-center">
+      <div class="col-lg-6 col-md-12">
+        <img src="https://preview.colorlib.com/theme/universityedu/assets/img/gallery/about1.jpg" class="img-fluid" alt="">
+      </div>
+      <div class="col-lg-6 col-md-12 mt-4 mt-lg-0">
+        <h1>A COMPREHENSIVE <br> TEACHING APPROACH</h1>
+        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer efficitur tellus metus, sed feugiat leo posuere ac.</p>
+        <p><a href="#" class="text-decoration-underline" style="color:#007A5C;">Learn More</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Programs -->
+  <div class="container cnt2">
+    <div class="text-center mb-5">
+      <h2 style="color:#32404D;">Programs we Offer</h2>
+      <p class="text-muted">Maecenas felis felis, vulputate sit amet mauris et, semper aliquam ligula.</p>
+    </div>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      <div class="col">
+        <div class="card h-100 p-3">
+          <img src="https://preview.colorlib.com/theme/universityedu/assets/img/gallery/blog1.jpg" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5>Card title</h5>
+            <p>This is a longer card with supporting text below.</p>
+            <a href="#" class="text-decoration-underline" style="color:#007A5C;">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 p-3">
+          <img src="https://preview.colorlib.com/theme/universityedu/assets/img/gallery/blog2.jpg" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5>Card title</h5>
+            <p>This is a longer card with supporting text below.</p>
+            <a href="#" class="text-decoration-underline" style="color:#007A5C;">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Top Stories -->
+  <div class="container cntr5">
+    <h2 class="text-uppercase mb-4">Top Stories</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      <div class="col">
+        <div class="card">
+          <img src="https://preview.colorlib.com/theme/universityedu/assets/img/gallery/class-img1.jpg" class="card-img-top" alt="">
+          <div class="card-body text-center">
+            <p style="color:#34a853;">Linguistics alumna says<br> recognizing Indigenous Languages Day is crucial</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="https://preview.colorlib.com/theme/universityedu/assets/img/gallery/class-img2.jpg" class="card-img-top" alt="">
+          <div class="card-body text-center">
+            <p style="color:#34a853;">Linguistics alumna says<br> recognizing Indigenous Languages Day is crucial</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="https://preview.colorlib.com/theme/universityedu/assets/img/gallery/class-img3.jpg" class="card-img-top" alt="">
+          <div class="card-body text-center">
+            <p style="color:#34a853;">Linguistics alumna says<br> recognizing Indigenous Languages Day is crucial</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Our Partners Carousel -->
+  <div class="container-fluid colc my-5">
+    <h1>OUR PARTNERS</h1>
+    <p class="text-muted">Trusted by top organizations worldwide</p>
+    <div id="partnersCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner text-center">
+        <div class="carousel-item active">
+          <img src="photo.jpg" alt="Partner 1">
+        </div>
+        <div class="carousel-item">
+          <img src="photo.jpg" alt="Partner 2">
+        </div>
+        <div class="carousel-item">
+          <img src="photo.jpg" alt="Partner 3">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#partnersCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#partnersCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Trusted Section -->
+  <div class="container-fluid my-5">
+    <div class="rowm">
+      <div class="img-1"></div>
+      <div class="text-1">
+        <h2>TRUSTED BY OVER <br> 6000+ STUDENTS</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer efficitur tellus metus.</p>
+        <a href="#" class="btn btn-light">Join Now</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

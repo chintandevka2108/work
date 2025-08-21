@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS for Animations -->
+    <style>
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-100%); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(100%); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .slide-in-left {
+            animation: slideInLeft 1s ease-in-out;
+        }
+
+        .slide-in-right {
+            animation: slideInRight 1s ease-in-out;
+        }
+
+        .rounded-image {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header (start) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <div class="container">
+            <a class="navbar-brand fs-1 slide-in-left" href="#">Chintan Devka</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link fs-4 slide-in-right" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-4 slide-in-right" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-4 slide-in-right" href="#achievements">Achievements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-4 slide-in-right" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Header (end) -->
+
+    <!-- Home (start) -->
+    <section id="home" class="bg-info text-center text-black py-5">
+        <div class="container fade-in">
+            <h1>Welcome To My Website!</h1>
+            <h2>Freelance Programmer</h2>
+        </div>
+    </section>
+    <!-- Home (end) -->
+
+    <!-- About (start) -->
+    <section id="about" class="bg-info text-black py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 fade-in">About Me</h2>
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-6 text-center slide-in-left">
+                    <img src="profile picture.jpeg" class="img-fluid rounded-image" alt="Chintan Devka">
+                </div>
+                <div class="col-md-6" style="font-size: 25px;">
+                    <p class="fade-in">Thanks for visiting my website, I'm glad you checked it out. I'm Chintan Devka, a B.Com graduate with a passion for exploring the unexplored. Though it might sound odd, I believe in learning from failures. I also love computer programming and enjoy exploring and studying information.</p>
+                    <p class="fade-in">I primarily work in C, C++, and Java. C++ and Data Structures and Algorithms are my strongest areas. Additionally, I have knowledge of Web Development, Linux, and databases.</p>
+                    <p class="fade-in">This website is one of my Web Development projects, built using HTML. You can find ideas for projects in different languages here. Thanks again for reading; it's because of people like you that this website exists and prospers!</p>
+                    <p class="fade-in"><b>- Chintan Devka</b></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About (end) -->
+
+    <!-- Achievements (start) -->
+    <section id="achievements" class="bg-dark text-white py-5">
+        <div class="container col-sm-12 col-md-6 col-lg-3">
+            <h2 class="mb-4 fade-in">Achievements</h2>
+            <ul class="list-unstyled">
+                <li class="mb-4 fade-in">
+                    <h4>C.A. Tally Completed</h4>
+                    <p>August 2022 - Present</p>
+                    <p>Conducted events and workshops on different technologies.</p>
+                </li>
+                <li class="mb-4 fade-in">
+                    <h4>B.COM Completed</h4>
+                    <p>December 2024 - Present</p>
+                    <p>Solved Major Account Issues.</p>
+                </li>
+                <li class="mb-4 fade-in">
+                    <h4>Skills</h4>
+                    <p>HTML: 75% | CSS: 70% | JS: 55% | Frontend: 80% | Backend: 85%</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- Achievements (end) -->
+
+    <!-- Contact (start) -->
+    <section id="contact" class="bg-info text-black py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 fade-in">Contact</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label fade-in"></label>
+                            <input type="text" class="form-control fade-in" id="name" placeholder="Enter Name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label fade-in"></label>
+                            <input type="email" class="form-control fade-in" id="email" placeholder="Enter E-mail">
+                        </div>
+                        <div class="mb-3">
+                            <label for="number" class="form-label fade-in"></label>
+                            <input type="number" class="form-control fade-in" id="number" placeholder="Enter Number">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label fade-in"></label>
+                            <textarea class="form-control fade-in" id="message" rows="5" placeholder="Enter your message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-dark w-100 fade-in">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact (end) -->
+
+    <!-- Footer Start -->
+    <footer class="bg-dark text-light pt-4">
+        <div class="container">
+            <div class="row">
+                <!-- About Section -->
+                <div class="col-md-4">
+                    <h5>About Me</h5>
+                    <p>
+                        I'm Chintan Devka, a passionate developer skilled in C++, Java, and web development. 
+                        I enjoy exploring new technologies and building projects that solve real-world problems.
+                    </p>
+                </div>
+                <!-- Quick Links -->
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-light">Home</a></li>
+                        <li><a href="#about" class="text-light">About</a></li>
+                        <li><a href="#achievements" class="text-light">Achievements</a></li>
+                        <li><a href="#contact" class="text-light">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Contact Section -->
+                <div class="col-md-4">
+                    <h5>Contact Me</h5>
+                    <ul class="list-unstyled">
+                        <li>Email: chintangadhavi511@example.com</li>
+                        <li>Phone: +91 75750 46239</li>
+                    </ul>
+                    <div class="mt-3">
+                        <a href="#" class="text-light me-2"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-light me-2"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col text-center">
+                    <p class="mb-0">&copy; 2070 Chintan Devka. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

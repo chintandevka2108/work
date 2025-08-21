@@ -1,0 +1,329 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  font-family: "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+}
+
+.maindiv {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0%;
+  background-color: white;
+  z-index: 1;
+}
+
+.nav_logo {
+  width: 200px;
+  height: 60px;
+  margin-left: 150px;
+  align-items: center;
+}
+
+.nav_logo img {
+  height: 40px;
+  width: 200px;
+}
+
+/* nav search bar */
+
+.nav_search {
+  width: 400px;
+  height: 60px;
+  display: flex;
+  margin-left: 30px;
+  align-items: center;
+}
+
+.nav_btn {
+  height: 45px;
+  width: 50px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: white;
+  border-right: none;
+}
+
+.search input {
+  height: 45px;
+  width: 350px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-left: none;
+}
+
+/* menu bar */
+
+.menudiv {
+  height: 45px;
+  width: 530px;
+  margin-left: 30px;
+  align-content: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.menu_btn button {
+  height: 40px;
+  width: 80px;
+  font-size: 14px;
+  font-family: Arial, Tahoma, " Bitstream Vera Sans", sans-serif;
+  border-radius: 20px;
+  background-color: white;
+  border: none;
+}
+
+.menu_btn button:hover {
+  background-color: #eae3e3;
+}
+
+.profile {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  background-image: url(profile_img.png);
+  background-size: cover;
+}
+
+/* --------------panel-------------------- */
+
+.panel {
+  height: 45px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 60px;
+  background-color: white;
+  z-index: 1;
+}
+
+.panel .section {
+  height: 25px;
+  width: 750px;
+  align-items: center;
+  padding-left: 110px;
+}
+
+.panel .section a {
+  font-size: 15px;
+  text-decoration: none;
+  font-family: Arial, Tahoma, " Bitstream Vera Sans", sans-serif;
+  color: black;
+  padding-left: 20px;
+}
+
+/* ----------------------hero section-------------- */
+
+.hero {
+  height: 500px;
+  width: 100%;
+  background-image: url(hero_img.jpg);
+  background-size: cover;
+  position: relative;
+  top: 105px;
+}
+
+.hero_txt {
+  height: 350px;
+  width: 1260px;
+  position: relative;
+  left: 140px;
+  top: 150px;
+}
+
+.hero_message {
+  height: 60;
+  width: 1260;
+  display: flex;
+  justify-content: center;
+  color: white;
+  position: relative;
+  top: 50px;
+}
+
+.hero_search {
+  position: relative;
+  top: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.hero_search button {
+  height: 56px;
+  width: 50px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  background-color: white;
+  border: none;
+}
+
+.hero_search input {
+  height: 56px;
+  width: 1160px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  font-size: 17px;
+  border: none;
+}
+
+/* ---------------hero box------------- */
+
+.hero_conten {
+  height: 2300px;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  position: relative;
+  top: 150px;
+}
+
+.hero_conten1 {
+  height: 300px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.hero_icon img {
+  height: 60px;
+  position: relative;
+  top: 30px;
+  left: 125px;
+}
+
+.hero_box {
+  height: 130px;
+  width: 420px;
+  text-align: center;
+  padding-top: 60px;
+  border: 1px solid #e3e3e3;
+}
+
+.hero_box h2 {
+  color: #00aa6c;
+}
+
+.booking {
+  height: 60px;
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.booking h2 {
+  height: 80px;
+  width: 95%;
+}
+
+/* ---------------restro----------- */
+
+.restro {
+  height: 300px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.restro_img {
+  height: 200px;
+  width: 330px;
+  background-size: cover;
+}
+
+.restro_name {
+  height: 100px;
+  width: 290px;
+}
+
+.restro_ret {
+  display: flex;
+  gap: 2px;
+  justify-content: start;
+}
+
+.restro_ret p {
+  font-size: 13px;
+}
+
+.r_p {
+  font-size: 13px;
+}
+
+.restro_ret div {
+  height: 15px;
+  width: 15px;
+  border-radius: 25px;
+  background-color: #00aa6c;
+}
+
+/* -------------------footer--------------- */
+
+.footer_top {
+  height: 460px;
+  width: 90%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 20px;
+  position: relative;
+  top: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #ffffff;
+}
+
+.footer_top1 {
+  width: 100%;
+}
+
+.footer_top p {
+  font-size: 15px;
+}
+.footer_top h5 {
+  font-size: 15px;
+}
+
+.footer {
+  height: 270px;
+  width: 100%;
+  background-color: #faf1ed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  position: relative;
+  top: 150px;
+}
+
+.footer_logo {
+  height: 50px;
+  width: 50px;
+  display: flex;
+}
+
+.copyr {
+  font-size: 10px;
+  font-family: "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+}
+
+.copyr a {
+  font-size: 15px;
+}
+
+.copyr pre {
+  font-size: 13px;
+}
+
+.country {
+  width: 200px;
+  height: 35px;
+  border-radius: 10px;
+}

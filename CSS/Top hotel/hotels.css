@@ -1,0 +1,771 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+.maindiv {
+  height: 60px;
+  width: 80%;
+  display: flex;
+  align-items: center;
+}
+
+.nav_logo {
+  width: 200px;
+  height: 60px;
+  margin-left: 150px;
+  align-items: center;
+}
+
+.nav_logo img {
+  height: 40px;
+  width: 200px;
+}
+
+/* nav search bar */
+
+.nav_search {
+  width: 400px;
+  height: 60px;
+  display: flex;
+  margin-left: 30px;
+  align-items: center;
+}
+
+.nav_btn {
+  height: 45px;
+  width: 50px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: white;
+  border-right: none;
+}
+
+.search input {
+  height: 45px;
+  width: 350px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-left: none;
+}
+
+/* menu bar */
+
+.menudiv {
+  height: 45px;
+  width: 530px;
+  margin-left: 30px;
+  align-content: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.menu_btn button {
+  height: 40px;
+  width: 80px;
+  font-size: 14px;
+  font-family: Arial, Tahoma, " Bitstream Vera Sans", sans-serif;
+  border-radius: 20px;
+  background-color: white;
+  border: none;
+}
+
+.menu_btn button:hover {
+  background-color: #eae3e3;
+}
+
+.menu_btn .singin:hover {
+  background-color: black;
+}
+
+.menu_btn .singin {
+  height: 40px;
+  width: 80px;
+  background-color: black;
+  border: 1px solid black;
+  font-family: Arial, Tahoma, " Bitstream Vera Sans", sans-serif;
+}
+
+.singin a{
+  color: white;
+  text-decoration: none;
+}
+
+/* panel */
+
+.panel {
+  height: 45px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.panel .section {
+  height: 25px;
+  width: 750px;
+  align-items: center;
+  padding-left: 110px;
+}
+
+.panel .section a {
+  font-size: 15px;
+  text-decoration: none;
+  font-family: Arial, Tahoma, " Bitstream Vera Sans", sans-serif;
+  color: black;
+  padding-left: 20px;
+}
+
+/* Hero Section */
+
+.hero {
+  height: 480px;
+  width: 100%;
+}
+
+.hero_img {
+  height: 480px;
+  width: 80%;
+  margin-left: 10%;
+  background-image: url(hero_img.png);
+  background-size: cover;
+}
+
+.hero_logo {
+  height: 100px;
+  width: 100px;
+}
+
+.hero_txt {
+  height: 200px;
+  width: 800px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 280px;
+  left: 100px;
+}
+
+.hero_txt span {
+  height: 200px;
+  width: 700px;
+  margin-left: 30px;
+}
+
+.hero_txt span h4 {
+  font-size: 34px;
+  color: #f2b203;
+  font-weight: 700;
+  font-family: "Trip Sans VF", "Trip Sans", Arial, sans-serif !important;
+}
+
+.hero_txt span h1 {
+  font-size: 60px;
+  color: #f2b203;
+  font-weight: 700;
+  font-family: "Trip Sans VF", "Trip Sans", Arial, sans-serif !important;
+}
+
+/* sticky navbar */
+
+.sticky_nav {
+  height: 120px;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0px;
+  z-index: 1;
+}
+
+.sticky_btn {
+  height: 50px;
+  width: 1110px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-left: 200px;
+}
+
+.sticky_btn span button {
+  height: 40px;
+  width: 225px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: "Trip Sans VF", "Trip Sans", Arial, sans-serif !important;
+  background-color: white;
+  border-radius: 20px;
+  border: 0.5px solid black;
+}
+
+.sticky_btn .line {
+  font-size: 40px;
+  font-weight: 800;
+  color: black;
+  padding-bottom: 11px;
+}
+
+.sticky_btn div button {
+  height: 40px;
+  width: 130px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: "Trip Sans VF", "Trip Sans", Arial, sans-serif !important;
+  background-color: white;
+  border-radius: 20px;
+  border: 0.5px solid black;
+  margin-left: 20px;
+}
+
+.sticky_btn .arrow {
+  height: 40px;
+  width: 40px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: "Trip Sans VF", "Trip Sans", Arial, sans-serif !important;
+  background-color: white;
+  border-radius: 20px;
+  border: none;
+}
+
+/* button hover */
+
+.sticky_btn button:hover {
+  background-color: black;
+  color: white;
+}
+
+.sticky_btn .arrow:hover {
+  background-color: white;
+}
+
+/* topic */
+
+.topic {
+  height: 1233px;
+  font-family: "Trip Sans VF", "Trip Sans", Arial, sans-serif !important;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+.topic_txt pre {
+  font-family: "Trip Sans VF", "Trip Sans", Arial, sans-serif !important;
+}
+
+/* topic image */
+
+.topic_img .image {
+  height: 512px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-image: url(topic_img.jpg);
+  background-size: cover;
+}
+
+/* review */
+
+.review {
+  height: 450px;
+  background-color: #f2f1ec;
+}
+
+.review_box {
+  height: 337px;
+  width: 945px;
+  padding: 50px 125px 50px 125px;
+  display: flex;
+}
+
+.rev_txt {
+  height: 337px;
+  width: 550px;
+}
+
+.rev_name p {
+  font-size: 20px;
+  position: relative;
+  bottom: 20px;
+}
+
+.rev_name h2 {
+  font-size: 30px;
+  font-weight: 700;
+  font-family: "Trip Sans VF", "Trip Sans", Arial, sans-serif !important;
+  position: relative;
+  bottom: 20px;
+}
+
+.rev_name a {
+  font-size: 15px;
+  color: black;
+  position: relative;
+  bottom: 20px;
+}
+
+.rev_pre {
+  height: 110px;
+  width: 550px;
+  position: relative;
+  bottom: 20px;
+}
+
+.rev_pre pre {
+  font-size: 16px;
+  font-family: "Trip Sans VF", "Trip Sans", Arial, sans-serif !important;
+}
+.rev_pre p {
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Trip Sans VF", "Trip Sans", Arial, sans-serif !important;
+}
+
+.rev_btn {
+  height: 45px;
+  width: 550px;
+  display: flex;
+  justify-content: start;
+  gap: 20px;
+}
+
+.rev_btn button {
+  width: 150px;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: white;
+  font-family: "Trip Sans VF", "Trip Sans", Arial, sans-serif !important;
+  border-radius: 50px;
+  border: none;
+}
+
+.rev_bar {
+  height: 337px;
+  width: 393px;
+}
+
+.rev_ret {
+  height: 40px;
+  width: 393px;
+  display: flex;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.rev_ret p {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.rev_ret .green_circle {
+  display: flex;
+  margin-right: 5px;
+}
+
+.rev_ret span {
+  margin-left: 15px;
+}
+
+.rev_ret1 {
+  height: 150px;
+  width: 393px;
+  margin-top: 43px;
+}
+
+.rev_ret2 {
+  height: 30px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.green_line {
+  height: 15px;
+  width: 150px;
+  border-radius: 50px;
+  background-color: #00aa6c;
+}
+
+/* product images */
+
+.product {
+  height: 10000px;
+  font-family: "Trip Sans VF", "Trip Sans", Arial, sans-serif !important;
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-top: 40px;
+}
+
+.pro_detail {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.pro_img1 {
+  height: 400px;
+  width: 500px;
+  border-radius: 15px;
+  margin-bottom: 100px;
+  background-image: url(pro_img1.jpg);
+}
+
+.pro_img2 {
+  height: 400px;
+  width: 500px;
+  border-radius: 15px;
+  margin-bottom: 100px;
+  background-image: url(pro_img2.jpg);
+}
+
+.pro_img3 {
+  height: 400px;
+  width: 500px;
+  border-radius: 15px;
+  margin-bottom: 100px;
+  background-image: url(pro_img3.jpg);
+}
+
+.pro_img4 {
+  height: 400px;
+  width: 500px;
+  border-radius: 15px;
+  margin-bottom: 100px;
+  background-image: url(pro_img4.jpg);
+}
+
+.pro_img5 {
+  height: 400px;
+  width: 500px;
+  border-radius: 15px;
+  margin-bottom: 100px;
+  background-image: url(pro_img5.jpg);
+}
+
+.pro_img6 {
+  height: 400px;
+  width: 500px;
+  border-radius: 15px;
+  margin-bottom: 100px;
+  background-image: url(pro_img6.jpg);
+}
+
+.pro_img7 {
+  height: 400px;
+  width: 500px;
+  border-radius: 15px;
+  margin-bottom: 100px;
+  background-image: url(pro_img7.jpg);
+}
+
+.pro_img8 {
+  height: 400px;
+  width: 500px;
+  border-radius: 15px;
+  margin-bottom: 100px;
+  background-image: url(pro_img8.jpg);
+}
+
+.pro_img9 {
+  height: 400px;
+  width: 500px;
+  border-radius: 15px;
+  margin-bottom: 100px;
+  background-image: url(pro_img9.jpg);
+}
+
+.pro_img10 {
+  height: 400px;
+  width: 500px;
+  border-radius: 15px;
+  margin-bottom: 100px;
+  background-image: url(pro_img10.jpg);
+}
+
+.pro_img11 {
+  height: 400px;
+  width: 500px;
+  border-radius: 15px;
+  margin-bottom: 100px;
+  background-image: url(pro_img11.jpg);
+}
+
+.pro_img12 {
+  height: 400px;
+  width: 500px;
+  border-radius: 15px;
+  margin-bottom: 100px;
+  background-image: url(pro_img12.jpg);
+}
+
+.pro_img13 {
+  height: 400px;
+  width: 500px;
+  border-radius: 15px;
+  margin-bottom: 100px;
+  background-image: url(pro_img13.jpg);
+}
+
+.pro_img14 {
+  height: 400px;
+  width: 500px;
+  border-radius: 15px;
+  margin-bottom: 100px;
+  background-image: url(pro_img14.jpg);
+}
+
+.pro_img15 {
+  height: 400px;
+  width: 500px;
+  border-radius: 15px;
+  margin-bottom: 100px;
+  background-image: url(pro_img15.jpg);
+}
+
+.pro_img16 {
+  height: 400px;
+  width: 500px;
+  border-radius: 15px;
+  margin-bottom: 100px;
+  background-image: url(pro_img16.jpg);
+}
+
+.pro_img17 {
+  height: 400px;
+  width: 500px;
+  border-radius: 15px;
+  margin-bottom: 100px;
+  background-image: url(pro_img17.jpg);
+}
+
+.pro_img18 {
+  height: 400px;
+  width: 500px;
+  border-radius: 15px;
+  margin-bottom: 100px;
+  background-image: url(pro_img18.jpg);
+}
+
+.pro_img19 {
+  height: 400px;
+  width: 500px;
+  border-radius: 15px;
+  margin-bottom: 100px;
+  background-image: url(pro_img19.jpg);
+}
+
+.pro_img20 {
+  height: 400px;
+  width: 500px;
+  border-radius: 15px;
+  margin-bottom: 100px;
+  background-image: url(pro_img20.jpg);
+}
+
+/* product review ret */
+
+.pro_txt {
+  height: 400px;
+  width: 650px;
+  border-radius: 15px;
+}
+
+.pro_txt .pro_review {
+  height: 350px;
+  width: 600px;
+  margin-left: 25px;
+  margin-top: 25px;
+}
+
+.pro_ret {
+  height: 25px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  position: relative;
+  bottom: 20px;
+}
+
+.pro_name p {
+  font-size: 20px;
+  position: relative;
+  bottom: 20px;
+}
+
+.pro_name h2 {
+  font-size: 30px;
+  font-weight: 700;
+  font-family: "Trip Sans VF", "Trip Sans", Arial, sans-serif !important;
+  position: relative;
+  bottom: 20px;
+}
+
+.pro_name a {
+  font-size: 15px;
+  color: black;
+  position: relative;
+  bottom: 20px;
+}
+
+.green_circle {
+  height: 15px;
+  width: 15px;
+  background-color: #00aa6c;
+  border-radius: 15px;
+}
+
+.pro_ret span {
+  height: 25px;
+  width: 110px;
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+.pro_pre {
+  height: 110px;
+  width: 600px;
+  position: relative;
+  bottom: 20px;
+}
+
+.pro_pre pre {
+  font-size: 16px;
+  font-family: "Trip Sans VF", "Trip Sans", Arial, sans-serif !important;
+  /* padding-bottom: 20px; */
+}
+.pro_pre p {
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Trip Sans VF", "Trip Sans", Arial, sans-serif !important;
+}
+
+.pro_btn {
+  height: 45px;
+  width: 600px;
+  display: flex;
+  justify-content: start;
+  gap: 20px;
+}
+
+.pro_btn button {
+  width: 150px;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: #f2f2ec;
+  font-family: "Trip Sans VF", "Trip Sans", Arial, sans-serif !important;
+  border-radius: 50px;
+  border: none;
+}
+
+/* Explore more Travellers' Choice categories */
+
+.spn {
+  padding-left: 150px;
+  font-size: 24px;
+  font-family: "Trip Sans VF", "Trip Sans", Arial, sans-serif !important;
+  display: flex;
+}
+
+.spn hr {
+  width: 740px;
+  background-color: #f2b203;
+  border: none;
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.explore_more {
+  height: 300px;
+  font-family: "Trip Sans VF", "Trip Sans", Arial, sans-serif !important;
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-top: 40px;
+}
+
+.exp_img {
+  height: 270px;
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+}
+.exp_img1 {
+  height: 270px;
+  width: 270px;
+  background-image: url(explore_more_img1.png);
+  background-size: cover;
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+  border-radius: 15px;
+}
+.exp_img2 {
+  height: 270px;
+  width: 270px;
+  background-image: url(explore_more_img2.png);
+  background-size: cover;
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+  border-radius: 15px;
+}
+.exp_img3 {
+  height: 270px;
+  width: 270px;
+  display: inline-block;
+  background-image: url(explore_more_img3.png);
+  background-size: cover;
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+  border-radius: 15px;
+}
+.exp_img4 {
+  height: 270px;
+  width: 270px;
+  background-image: url(explore_more_img4.png);
+  background-size: cover;
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+  border-radius: 15px;
+}
+
+/* footer */
+
+.footer {
+  height: 270px;
+  width: 100%;
+  background-color: #faf1ed;
+  display: flex;
+  align-items: center;
+}
+
+.footer_logo {
+  height: 50px;
+  width: 50px;
+  display: flex;
+}
+
+.copyr {
+  font-size: 10px;
+  font-family: "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+}
+
+.copyr a {
+  font-size: 15px;
+}
+
+.copyr pre {
+  font-size: 13px;
+}
+
+.country {
+  width: 200px;
+  height: 35px;
+  border-radius: 10px;
+}

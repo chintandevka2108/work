@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blinkit Clone - Groceries in 10 Minutes</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS Library for Scroll Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Swiper.js for Sliders -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@10/swiper-bundle.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-gray-50">
+    <!-- Custom Animated Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Loading Screen -->
+    <div id="loader" class="loader-container">
+        <div class="loader">
+            <div class="grocery-cart">
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="loading-text">
+                <span>B</span><span>l</span><span>i</span><span>n</span><span>k</span><span>i</span><span>t</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Falling Groceries Background -->
+    <div class="falling-groceries" id="fallingGroceries"></div>
+
+    <!-- Header -->
+    <header class="header-container relative z-50">
+        <nav class="bg-white shadow-lg fixed w-full top-0 z-40 transition-all duration-300" id="navbar">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center py-4">
+                    <div class="logo-container flex-shrink-0" data-aos="fade-right">
+                        <h1
+                            class="text-2xl font-bold text-green-600 hover:scale-105 transition-transform duration-300 cursor-pointer">
+                            <i class="fas fa-bolt mr-2"></i>Blinkit
+                        </h1>
+                    </div>
+
+                    <div class="search-container flex-1 max-w-md mx-4 hidden md:block" data-aos="fade-down"
+                        data-aos-delay="200">
+                        <div class="relative">
+                            <input type="text" placeholder="Search for products..."
+                                class="w-full px-4 py-3 pl-12 rounded-full border-2 border-gray-200 focus:border-green-500 focus:outline-none transition-all duration-300 search-input">
+                            <i
+                                class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-end gap-3 md:gap-4" data-aos="fade-left" data-aos-delay="400">
+
+                        <button class="search-icon-btn md:hidden">
+                            <i class="fas fa-search text-xl text-gray-700"></i>
+                        </button>
+
+                        <button
+                            class="location-btn flex items-center space-x-2 hover:scale-105 transition-transform duration-300">
+                            <i class="fas fa-map-marker-alt text-green-600"></i>
+                            <span class="hidden md:block text-sm">Delhi, India</span>
+                        </button>
+
+                        <button class="cart-btn relative hover:scale-105 transition-transform duration-300">
+                            <i class="fas fa-shopping-cart text-xl text-gray-700"></i>
+                            <span
+                                class="cart-badge absolute -top-2 -right-2 bg-green-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center animate-pulse">3</span>
+                        </button>
+
+                        <button
+                            class="login-btn bg-green-600 text-white rounded-full transition-all duration-300 hover:bg-green-700 hover:scale-105 text-sm px-4 py-2 sm:text-base sm:px-6">
+                            Login
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section relative pt-24 pb-16 bg-gradient-to-br from-green-50 to-blue-50 overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-8 items-center min-h-[500px]">
+                <!-- Hero Content -->
+                <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
+                    <h1 class="text-5xl md:text-6xl font-bold text-gray-800 mb-6 leading-tight">
+                        Groceries in
+                        <span class="text-green-600 typing-animation">10 minutes</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8" data-aos="fade-up" data-aos-delay="300">
+                        Get your daily essentials delivered to your doorstep in just 10 minutes. Fresh, fast, and
+                        reliable!
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="500">
+                        <button
+                            class="cta-primary bg-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-green-700 transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                            <i class="fas fa-shopping-bag mr-2"></i>
+                            Start Shopping
+                        </button>
+                        <button
+                            class="cta-secondary border-2 border-green-600 text-green-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-green-600 hover:text-white transition-all duration-300 hover:scale-105">
+                            <i class="fas fa-play mr-2"></i>
+                            Watch Demo
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Hero Animation -->
+                <div class="hero-animation" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="floating-groceries">
+                        <div class="grocery-item grocery-1">🍎</div>
+                        <div class="grocery-item grocery-2">🥕</div>
+                        <div class="grocery-item grocery-3">🥬</div>
+                        <div class="grocery-item grocery-4">🍌</div>
+                        <div class="grocery-item grocery-5">🥛</div>
+                        <div class="grocery-item grocery-6">🍞</div>
+                    </div>
+                    <div class="delivery-truck">
+                        <i class="fas fa-truck text-6xl text-green-600"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Animated Background Elements -->
+        <div class="absolute top-20 left-10 w-20 h-20 bg-green-200 rounded-full opacity-50 animate-bounce"></div>
+        <div class="absolute top-40 right-20 w-16 h-16 bg-blue-200 rounded-full opacity-50 animate-pulse"></div>
+        <div class="absolute bottom-20 left-1/4 w-12 h-12 bg-yellow-200 rounded-full opacity-50 animate-bounce"
+            style="animation-delay: 1s;"></div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">
+                Shop by Category
+            </h2>
+
+            <div class="categories-grid grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                <!-- Category Items -->
+                <div class="category-item" data-aos="zoom-in" data-aos-delay="100">
+                    <div
+                        class="category-card bg-red-50 p-6 rounded-2xl text-center hover:scale-110 transition-all duration-300 hover:shadow-lg cursor-pointer">
+                        <div class="category-icon text-4xl mb-3">🍎</div>
+                        <h3 class="text-sm font-semibold text-gray-700">Fruits & Vegetables</h3>
+                    </div>
+                </div>
+
+                <div class="category-item" data-aos="zoom-in" data-aos-delay="200">
+                    <div
+                        class="category-card bg-blue-50 p-6 rounded-2xl text-center hover:scale-110 transition-all duration-300 hover:shadow-lg cursor-pointer">
+                        <div class="category-icon text-4xl mb-3">🥛</div>
+                        <h3 class="text-sm font-semibold text-gray-700">Dairy & Breakfast</h3>
+                    </div>
+                </div>
+
+                <div class="category-item" data-aos="zoom-in" data-aos-delay="300">
+                    <div
+                        class="category-card bg-yellow-50 p-6 rounded-2xl text-center hover:scale-110 transition-all duration-300 hover:shadow-lg cursor-pointer">
+                        <div class="category-icon text-4xl mb-3">🍞</div>
+                        <h3 class="text-sm font-semibold text-gray-700">Bakery & Biscuits</h3>
+                    </div>
+                </div>
+
+                <div class="category-item" data-aos="zoom-in" data-aos-delay="400">
+                    <div
+                        class="category-card bg-green-50 p-6 rounded-2xl text-center hover:scale-110 transition-all duration-300 hover:shadow-lg cursor-pointer">
+                        <div class="category-icon text-4xl mb-3">🥤</div>
+                        <h3 class="text-sm font-semibold text-gray-700">Cold Drinks</h3>
+                    </div>
+                </div>
+
+                <div class="category-item" data-aos="zoom-in" data-aos-delay="500">
+                    <div
+                        class="category-card bg-purple-50 p-6 rounded-2xl text-center hover:scale-110 transition-all duration-300 hover:shadow-lg cursor-pointer">
+                        <div class="category-icon text-4xl mb-3">🍫</div>
+                        <h3 class="text-sm font-semibold text-gray-700">Snacks</h3>
+                    </div>
+                </div>
+
+                <div class="category-item" data-aos="zoom-in" data-aos-delay="600">
+                    <div
+                        class="category-card bg-pink-50 p-6 rounded-2xl text-center hover:scale-110 transition-all duration-300 hover:shadow-lg cursor-pointer">
+                        <div class="category-icon text-4xl mb-3">🧴</div>
+                        <h3 class="text-sm font-semibold text-gray-700">Personal Care</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ultra-Enhanced Products Slider Section -->
+    <section
+        class="products-section py-20 bg-gradient-to-br from-gray-50 via-green-50 to-blue-50 relative overflow-hidden">
+        <!-- Advanced Animated Background Elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
+            <div class="floating-bg-element bg-1"></div>
+            <div class="floating-bg-element bg-2"></div>
+            <div class="floating-bg-element bg-3"></div>
+            <div class="floating-bg-element bg-4"></div>
+            <div class="floating-bg-element bg-5"></div>
+        </div>
+
+        <!-- Animated Particles -->
+        <div class="particles-container">
+            <div class="particle particle-1"></div>
+            <div class="particle particle-2"></div>
+            <div class="particle particle-3"></div>
+            <div class="particle particle-4"></div>
+            <div class="particle particle-5"></div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <div class="inline-block mb-6">
+                    <span
+                        class="text-sm font-semibold text-green-600 uppercase tracking-wide bg-green-100 px-4 py-2 rounded-full animate-pulse">
+                        🌟 Trending Now
+                    </span>
+                </div>
+                <h2 class="text-5xl md:text-6xl font-bold text-gray-800 mb-8 relative">
+                    <span class="gradient-text-animated">Featured Products</span>
+                    <div class="title-underline"></div>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Discover our handpicked selection of premium groceries with
+                    <span class="text-green-600 font-semibold">lightning-fast delivery</span>
+                    and unmatched freshness guarantee
+                </p>
+            </div>
+
+            <!-- Ultra-Enhanced Products Swiper -->
+            <div class="swiper products-swiper-ultra" data-aos="fade-up" data-aos-delay="300">
+                <div class="swiper-wrapper">
+                    <!-- Ultra-Enhanced Product Cards -->
+                    <div class="swiper-slide">
+                        <div class="product-card-ultra group" data-product="🍎">
+                            <!-- Spotlight Effect -->
+                            <div class="spotlight-effect"></div>
+
+                            <!-- Background Glow -->
+                            <div class="card-glow"></div>
+
+
+                            <!-- Product Image Container -->
+                            <div class="product-image-container">
+                                <div class="product-image-wrapper">
+                                    <div class="product-image-bg"></div>
+                                    <div class="product-emoji">🍎</div>
+                                    <div class="shine-overlay"></div>
+                                    <div class="pulse-ring"></div>
+                                </div>
+
+                                <!-- Quick View Button -->
+                                <button class="quick-view-btn">
+                                    <i class="fas fa-eye"></i>
+                                    <span>Quick View</span>
+                                </button>
+                            </div>
+
+                            <!-- Product Info -->
+                            <div class="product-info">
+                                <!-- Category Tag -->
+                                <div class="category-tag">
+                                    <i class="fas fa-leaf"></i>
+                                    <span>Organic Fruits</span>
+                                </div>
+
+                                <h3 class="product-title">Premium Red Apples</h3>
+                                <p class="product-subtitle">Farm Fresh • Hand Picked • 1kg Pack</p>
+
+                                <!-- Rating System -->
+                                <div class="rating-container">
+                                    <div class="stars-container">
+                                        <div class="stars-bg">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="stars-fill" style="width: 100%">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <span class="rating-text">(4.8) • 2.3k reviews</span>
+                                </div>
+
+                                <!-- Price Section -->
+                                <div class="price-section">
+                                    <div class="price-main">
+                                        <span class="currency">₹</span>
+                                        <span class="price-amount" data-price="120">120</span>
+                                    </div>
+                                    <div class="price-original">₹160</div>
+                                    <div class="savings-badge">Save ₹40</div>
+                                </div>
+
+                                <!-- Action Buttons -->
+                                <div class="action-buttons">
+                                    <div class="quantity-selector">
+                                        <button class="qty-btn qty-minus">-</button>
+                                        <span class="qty-display">1</span>
+                                        <button class="qty-btn qty-plus">+</button>
+                                    </div>
+
+                                    <button class="add-to-cart-ultra">
+                                        <div class="btn-bg"></div>
+                                        <div class="btn-content">
+                                            <i class="fas fa-shopping-cart"></i>
+                                            <span>Add to Cart</span>
+                                        </div>
+                                        <div class="btn-success">
+                                            <i class="fas fa-check"></i>
+                                            <span>Added!</span>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- More enhanced product cards with different colors and products -->
+                    <!-- Carrots Card -->
+                    <div class="swiper-slide">
+                        <div class="product-card-ultra group orange-theme" data-product="🥕">
+                            <div class="spotlight-effect"></div>
+                            <div class="card-glow"></div>
+
+
+                            <div class="product-image-container">
+                                <div class="product-image-wrapper">
+                                    <div class="product-image-bg"></div>
+                                    <div class="product-emoji">🥕</div>
+                                    <div class="shine-overlay"></div>
+                                    <div class="pulse-ring"></div>
+                                </div>
+
+                                <button class="quick-view-btn">
+                                    <i class="fas fa-eye"></i>
+                                    <span>Quick View</span>
+                                </button>
+                            </div>
+
+                            <div class="product-info">
+                                <div class="category-tag orange-tag">
+                                    <i class="fas fa-carrot"></i>
+                                    <span>Root Vegetables</span>
+                                </div>
+
+                                <h3 class="product-title">Organic Carrots</h3>
+                                <p class="product-subtitle">Farm Fresh • Pesticide Free • 500g Pack</p>
+
+                                <div class="rating-container">
+                                    <div class="stars-container">
+                                        <div class="stars-bg">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="stars-fill" style="width: 100%">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <span class="rating-text">(4.7) • 1.8k reviews</span>
+                                </div>
+
+                                <div class="price-section">
+                                    <div class="price-main">
+                                        <span class="currency">₹</span>
+                                        <span class="price-amount" data-price="40">40</span>
+                                    </div>
+                                    <div class="price-original">₹50</div>
+                                    <div class="savings-badge">Save ₹10</div>
+                                </div>
+
+                                <div class="action-buttons">
+                                    <div class="quantity-selector">
+                                        <button class="qty-btn qty-minus">-</button>
+                                        <span class="qty-display">1</span>
+                                        <button class="qty-btn qty-plus">+</button>
+                                    </div>
+
+                                    <button class="add-to-cart-ultra">
+                                        <div class="btn-bg"></div>
+                                        <div class="btn-content">
+                                            <i class="fas fa-shopping-cart"></i>
+                                            <span>Add to Cart</span>
+                                        </div>
+                                        <div class="btn-success">
+                                            <i class="fas fa-check"></i>
+                                            <span>Added!</span>
+                                        </div>
+                                    </button>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Carrots Card -->
+                    <div class="swiper-slide">
+                        <div class="product-card-ultra group orange-theme" data-product="🥕">
+                            <div class="spotlight-effect"></div>
+                            <div class="card-glow"></div>
+
+
+                            <div class="product-image-container">
+                                <div class="product-image-wrapper">
+                                    <div class="product-image-bg"></div>
+                                    <div class="product-emoji">🥕</div>
+                                    <div class="shine-overlay"></div>
+                                    <div class="pulse-ring"></div>
+                                </div>
+
+                                <button class="quick-view-btn">
+                                    <i class="fas fa-eye"></i>
+                                    <span>Quick View</span>
+                                </button>
+                            </div>
+
+                            <div class="product-info">
+                                <div class="category-tag orange-tag">
+                                    <i class="fas fa-carrot"></i>
+                                    <span>Root Vegetables</span>
+                                </div>
+
+                                <h3 class="product-title">Organic Carrots</h3>
+                                <p class="product-subtitle">Farm Fresh • Pesticide Free • 500g Pack</p>
+
+                                <div class="rating-container">
+                                    <div class="stars-container">
+                                        <div class="stars-bg">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="stars-fill" style="width: 100%">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <span class="rating-text">(4.7) • 1.8k reviews</span>
+                                </div>
+
+                                <div class="price-section">
+                                    <div class="price-main">
+                                        <span class="currency">₹</span>
+                                        <span class="price-amount" data-price="40">40</span>
+                                    </div>
+                                    <div class="price-original">₹50</div>
+                                    <div class="savings-badge">Save ₹10</div>
+                                </div>
+
+                                <div class="action-buttons">
+                                    <div class="quantity-selector">
+                                        <button class="qty-btn qty-minus">-</button>
+                                        <span class="qty-display">1</span>
+                                        <button class="qty-btn qty-plus">+</button>
+                                    </div>
+
+                                    <button class="add-to-cart-ultra">
+                                        <div class="btn-bg"></div>
+                                        <div class="btn-content">
+                                            <i class="fas fa-shopping-cart"></i>
+                                            <span>Add to Cart</span>
+                                        </div>
+                                        <div class="btn-success">
+                                            <i class="fas fa-check"></i>
+                                            <span>Added!</span>
+                                        </div>
+                                    </button>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Carrots Card -->
+                    <div class="swiper-slide">
+                        <div class="product-card-ultra group orange-theme" data-product="🥕">
+                            <div class="spotlight-effect"></div>
+                            <div class="card-glow"></div>
+
+
+                            <div class="product-image-container">
+                                <div class="product-image-wrapper">
+                                    <div class="product-image-bg"></div>
+                                    <div class="product-emoji">🥕</div>
+                                    <div class="shine-overlay"></div>
+                                    <div class="pulse-ring"></div>
+                                </div>
+
+                                <button class="quick-view-btn">
+                                    <i class="fas fa-eye"></i>
+                                    <span>Quick View</span>
+                                </button>
+                            </div>
+
+                            <div class="product-info">
+                                <div class="category-tag orange-tag">
+                                    <i class="fas fa-carrot"></i>
+                                    <span>Root Vegetables</span>
+                                </div>
+
+                                <h3 class="product-title">Organic Carrots</h3>
+                                <p class="product-subtitle">Farm Fresh • Pesticide Free • 500g Pack</p>
+
+                                <div class="rating-container">
+                                    <div class="stars-container">
+                                        <div class="stars-bg">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="stars-fill" style="width: 100%">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <span class="rating-text">(4.7) • 1.8k reviews</span>
+                                </div>
+
+                                <div class="price-section">
+                                    <div class="price-main">
+                                        <span class="currency">₹</span>
+                                        <span class="price-amount" data-price="40">40</span>
+                                    </div>
+                                    <div class="price-original">₹50</div>
+                                    <div class="savings-badge">Save ₹10</div>
+                                </div>
+
+                                <div class="action-buttons">
+                                    <div class="quantity-selector">
+                                        <button class="qty-btn qty-minus">-</button>
+                                        <span class="qty-display">1</span>
+                                        <button class="qty-btn qty-plus">+</button>
+                                    </div>
+
+                                    <button class="add-to-cart-ultra">
+                                        <div class="btn-bg"></div>
+                                        <div class="btn-content">
+                                            <i class="fas fa-shopping-cart"></i>
+                                            <span>Add to Cart</span>
+                                        </div>
+                                        <div class="btn-success">
+                                            <i class="fas fa-check"></i>
+                                            <span>Added!</span>
+                                        </div>
+                                    </button>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Carrots Card -->
+                    <div class="swiper-slide">
+                        <div class="product-card-ultra group orange-theme" data-product="🥕">
+                            <div class="spotlight-effect"></div>
+                            <div class="card-glow"></div>
+
+
+                            <div class="product-image-container">
+                                <div class="product-image-wrapper">
+                                    <div class="product-image-bg"></div>
+                                    <div class="product-emoji">🥕</div>
+                                    <div class="shine-overlay"></div>
+                                    <div class="pulse-ring"></div>
+                                </div>
+
+                                <button class="quick-view-btn">
+                                    <i class="fas fa-eye"></i>
+                                    <span>Quick View</span>
+                                </button>
+                            </div>
+
+                            <div class="product-info">
+                                <div class="category-tag orange-tag">
+                                    <i class="fas fa-carrot"></i>
+                                    <span>Root Vegetables</span>
+                                </div>
+
+                                <h3 class="product-title">Organic Carrots</h3>
+                                <p class="product-subtitle">Farm Fresh • Pesticide Free • 500g Pack</p>
+
+                                <div class="rating-container">
+                                    <div class="stars-container">
+                                        <div class="stars-bg">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="stars-fill" style="width: 100%">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <span class="rating-text">(4.7) • 1.8k reviews</span>
+                                </div>
+
+                                <div class="price-section">
+                                    <div class="price-main">
+                                        <span class="currency">₹</span>
+                                        <span class="price-amount" data-price="40">40</span>
+                                    </div>
+                                    <div class="price-original">₹50</div>
+                                    <div class="savings-badge">Save ₹10</div>
+                                </div>
+
+                                <div class="action-buttons">
+                                    <div class="quantity-selector">
+                                        <button class="qty-btn qty-minus">-</button>
+                                        <span class="qty-display">1</span>
+                                        <button class="qty-btn qty-plus">+</button>
+                                    </div>
+
+                                    <button class="add-to-cart-ultra">
+                                        <div class="btn-bg"></div>
+                                        <div class="btn-content">
+                                            <i class="fas fa-shopping-cart"></i>
+                                            <span>Add to Cart</span>
+                                        </div>
+                                        <div class="btn-success">
+                                            <i class="fas fa-check"></i>
+                                            <span>Added!</span>
+                                        </div>
+                                    </button>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Continue with more products... -->
+                </div>
+
+                <!-- Ultra Navigation -->
+                <div class="swiper-navigation">
+                    <div class="swiper-button-prev-ultra">
+                        <div class="nav-icon">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                        <div class="nav-ripple"></div>
+                    </div>
+                    <div class="swiper-button-next-ultra">
+                        <div class="nav-icon">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                        <div class="nav-ripple"></div>
+                    </div>
+                </div>
+
+                <!-- Ultra Pagination -->
+                <div class="swiper-pagination-ultra"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animated Counter Statistics Section -->
+    <section class="stats-section py-20 bg-gradient-to-br from-green-600 to-blue-600 relative overflow-hidden">
+        <!-- Animated Background -->
+        <div class="absolute inset-0">
+            <div class="absolute top-10 left-10 w-40 h-40 bg-white bg-opacity-10 rounded-full animate-float"></div>
+            <div
+                class="absolute bottom-20 right-20 w-32 h-32 bg-white bg-opacity-10 rounded-full animate-float-delayed">
+            </div>
+            <div class="absolute top-1/2 left-1/4 w-24 h-24 bg-white bg-opacity-10 rounded-full animate-pulse"></div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                    Our Amazing Numbers
+                </h2>
+                <p class="text-xl text-white opacity-90 max-w-2xl mx-auto">
+                    Join millions of satisfied customers who trust Blinkit for their daily grocery needs
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Counter 1: Happy Customers -->
+                <div class="counter-card text-center" data-aos="zoom-in" data-aos-delay="100">
+                    <div
+                        class="counter-icon bg-white bg-opacity-20 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 backdrop-blur-sm">
+                        <i class="fas fa-users text-3xl text-white"></i>
+                    </div>
+                    <div class="counter-number text-4xl md:text-5xl font-bold text-white mb-2" data-target="500000">0
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Happy Customers</h3>
+                    <p class="text-white opacity-80">Across 10+ cities</p>
+                </div>
+
+                <!-- Counter 2: Orders Delivered -->
+                <div class="counter-card text-center" data-aos="zoom-in" data-aos-delay="200">
+                    <div
+                        class="counter-icon bg-white bg-opacity-20 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 backdrop-blur-sm">
+                        <i class="fas fa-truck text-3xl text-white"></i>
+                    </div>
+                    <div class="counter-number text-4xl md:text-5xl font-bold text-white mb-2" data-target="2500000">0
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Orders Delivered</h3>
+                    <p class="text-white opacity-80">In record time</p>
+                </div>
+
+                <!-- Counter 3: Products Available -->
+                <div class="counter-card text-center" data-aos="zoom-in" data-aos-delay="300">
+                    <div
+                        class="counter-icon bg-white bg-opacity-20 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 backdrop-blur-sm">
+                        <i class="fas fa-shopping-basket text-3xl text-white"></i>
+                    </div>
+                    <div class="counter-number text-4xl md:text-5xl font-bold text-white mb-2" data-target="25000">0
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Products Available</h3>
+                    <p class="text-white opacity-80">Fresh & quality assured</p>
+                </div>
+
+                <!-- Counter 4: Average Delivery Time -->
+                <div class="counter-card text-center" data-aos="zoom-in" data-aos-delay="400">
+                    <div
+                        class="counter-icon bg-white bg-opacity-20 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 backdrop-blur-sm">
+                        <i class="fas fa-clock text-3xl text-white"></i>
+                    </div>
+                    <div class="counter-number text-4xl md:text-5xl font-bold text-white mb-2" data-target="8">0</div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Minutes Average</h3>
+                    <p class="text-white opacity-80">Delivery time</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ultra-Enhanced Customer Reviews Section -->
+    <section
+        class="reviews-section-ultra py-24 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 relative overflow-hidden">
+        <!-- Animated Background -->
+        <div class="reviews-bg-animation">
+            <div class="bg-circle bg-circle-1"></div>
+            <div class="bg-circle bg-circle-2"></div>
+            <div class="bg-circle bg-circle-3"></div>
+            <div class="stars-bg-animation">
+                <div class="star-particle"></div>
+                <div class="star-particle"></div>
+                <div class="star-particle"></div>
+                <div class="star-particle"></div>
+                <div class="star-particle"></div>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <div class="section-badge">
+                    <i class="fas fa-users"></i>
+                    <span>Customer Stories</span>
+                </div>
+
+                <h2 class="text-5xl md:text-6xl font-bold text-white mb-8">
+                    <span class="testimonial-gradient">What Our Customers</span>
+                    <br>
+                    <span class="text-yellow-400">Are Saying</span>
+                </h2>
+
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                    Join over <span class="text-yellow-400 font-bold">500,000+</span> happy customers who trust us for
+                    their daily grocery needs
+                </p>
+
+                <!-- Stats Row -->
+                <div class="stats-row mt-12 grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="stat-item">
+                        <div class="stat-number">4.9</div>
+                        <div class="stat-label">Average Rating</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">500K+</div>
+                        <div class="stat-label">Happy Customers</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2M+</div>
+                        <div class="stat-label">Orders Delivered</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">8min</div>
+                        <div class="stat-label">Avg Delivery</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper reviews-swiper-ultra" data-aos="fade-up" data-aos-delay="400">
+                <div class="swiper-wrapper">
+                    <!-- Ultra Review Cards -->
+                    <div class="swiper-slide">
+                        <div class="review-card-ultra">
+                            <div class="review-bg-gradient"></div>
+                            <div class="review-spotlight"></div>
+
+                            <!-- Customer Avatar -->
+                            <div class="customer-avatar-container">
+
+                                <div class="avatar-image">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+                                        alt="Customer" class="avatar-img">
+                                    <div class="verified-badge">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Quote Icon -->
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+
+                            <!-- Rating Stars -->
+                            <div class="review-rating">
+                                <div class="stars-animated">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-date">2 days ago</span>
+                            </div>
+
+                            <!-- Review Text -->
+                            <div class="review-content">
+                                <h4 class="review-title">Absolutely Amazing Service!</h4>
+                                <p class="review-text">
+                                    "I've been using Blinkit for 6 months now and I'm blown away by their service. The
+                                    groceries arrive in 8 minutes, always fresh, and the delivery team is incredibly
+                                    professional. It's like having a supermarket right next door!"
+                                </p>
+                            </div>
+
+                            <!-- Customer Info -->
+                            <div class="customer-info">
+                                <div class="customer-details">
+                                    <h5 class="customer-name">Rajesh Sharma</h5>
+                                    <p class="customer-location">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        Mumbai, Maharashtra
+                                    </p>
+                                </div>
+                                <div class="customer-badge">
+                                    <i class="fas fa-crown"></i>
+                                    <span>Premium Member</span>
+                                </div>
+                            </div>
+
+                            <!-- Interaction Stats -->
+                            <div class="review-interactions">
+                                <button class="interaction-btn">
+                                    <i class="fas fa-thumbs-up"></i>
+                                    <span>124</span>
+                                </button>
+                                <button class="interaction-btn">
+                                    <i class="fas fa-share"></i>
+                                    <span>Share</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Second Review Card -->
+                    <div class="swiper-slide">
+                        <div class="review-card-ultra pink-theme">
+                            <div class="review-bg-gradient"></div>
+                            <div class="review-spotlight"></div>
+
+                            <div class="customer-avatar-container">
+                                <div class="avatar-image">
+                                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b4fe?w=150&h=150&fit=crop&crop=face"
+                                        alt="Customer" class="avatar-img">
+                                    <div class="verified-badge">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+
+                            <div class="review-rating">
+                                <div class="stars-animated">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-date">1 week ago</span>
+                            </div>
+
+                            <div class="review-content">
+                                <h4 class="review-title">Game Changer for Busy Moms!</h4>
+                                <p class="review-text">
+                                    "As a working mother, Blinkit has been a lifesaver! Fresh vegetables, quality
+                                    products, and lightning-fast delivery. My kids love the app interface too. Highly
+                                    recommend to all busy families out there!"
+                                </p>
+                            </div>
+
+                            <div class="customer-info">
+                                <div class="customer-details">
+                                    <h5 class="customer-name">Priya Patel</h5>
+                                    <p class="customer-location">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        Delhi, NCR
+                                    </p>
+                                </div>
+                                <div class="customer-badge gold-badge">
+                                    <i class="fas fa-star"></i>
+                                    <span>Top Reviewer</span>
+                                </div>
+                            </div>
+
+                            <div class="review-interactions">
+                                <button class="interaction-btn">
+                                    <i class="fas fa-thumbs-up"></i>
+                                    <span>89</span>
+                                </button>
+                                <button class="interaction-btn">
+                                    <i class="fas fa-share"></i>
+                                    <span>Share</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Third Review Card -->
+                    <div class="swiper-slide">
+                        <div class="review-card-ultra green-theme">
+                            <div class="review-bg-gradient"></div>
+                            <div class="review-spotlight"></div>
+
+                            <div class="customer-avatar-container">
+                                <div class="avatar-image">
+                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+                                        alt="Customer" class="avatar-img">
+                                    <div class="verified-badge">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+
+                            <div class="review-rating">
+                                <div class="stars-animated">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-date">3 days ago</span>
+                            </div>
+
+                            <div class="review-content">
+                                <h4 class="review-title">Exceptional Quality & Speed!</h4>
+                                <p class="review-text">
+                                    "I was skeptical about 10-minute delivery, but Blinkit proved me wrong! The produce
+                                    is always fresh, prices are competitive, and the customer service is outstanding.
+                                    This is the future of grocery shopping!"
+                                </p>
+                            </div>
+
+                            <div class="customer-info">
+                                <div class="customer-details">
+                                    <h5 class="customer-name">Amit Kumar</h5>
+                                    <p class="customer-location">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        Bangalore, Karnataka
+                                    </p>
+                                </div>
+                                <div class="customer-badge">
+                                    <i class="fas fa-medal"></i>
+                                    <span>Loyal Customer</span>
+                                </div>
+                            </div>
+
+                            <div class="review-interactions">
+                                <button class="interaction-btn">
+                                    <i class="fas fa-thumbs-up"></i>
+                                    <span>156</span>
+                                </button>
+                                <button class="interaction-btn">
+                                    <i class="fas fa-share"></i>
+                                    <span>Share</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review Navigation -->
+                <div class="review-navigation">
+                    <div class="swiper-button-prev-review">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                    <div class="swiper-button-next-review">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <!-- Review Pagination -->
+                <div class="swiper-pagination-review"></div>
+            </div>
+
+            <!-- Trust Indicators -->
+            <div class="trust-indicators mt-16" data-aos="fade-up" data-aos-delay="600">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="trust-item">
+                        <div class="trust-icon">
+                            <i class="fas fa-shield-check"></i>
+                        </div>
+                        <div class="trust-text">Verified Reviews</div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="trust-text">Real-time Feedback</div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="trust-text">500K+ Reviews</div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="trust-text">4.9/5 Rating</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">
+                Why Choose Blinkit?
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="feature-card text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="feature-icon bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-clock text-3xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">10 Minute Delivery</h3>
+                    <p class="text-gray-600">Lightning fast delivery to your doorstep in just 10 minutes</p>
+                </div>
+
+                <div class="feature-card text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="feature-icon bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-leaf text-3xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Fresh & Quality</h3>
+                    <p class="text-gray-600">Hand-picked fresh products with guaranteed quality assurance</p>
+                </div>
+
+                <div class="feature-card text-center" data-aos="fade-up" data-aos-delay="500">
+                    <div
+                        class="feature-icon bg-purple-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-shield-alt text-3xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Safe & Secure</h3>
+                    <p class="text-gray-600">Contactless delivery with secure payment options</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12" data-aos="fade-up">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">
+                        <i class="fas fa-bolt mr-2"></i>Blinkit
+                    </h3>
+                    <p class="text-gray-400">Your trusted partner for quick grocery delivery</p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Careers</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Categories</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Fruits & Vegetables</a>
+                        </li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Dairy Products</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Snacks</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Blinkit Clone. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/swiper@10/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

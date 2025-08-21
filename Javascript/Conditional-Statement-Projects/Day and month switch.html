@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Month and Days</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #8db1e7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            width: 80%;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #28a745;
+        }
+
+        #error {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Month and Days</h1>
+        <input type="number" id="month" placeholder="Enter a month number (1-12)" min="1" max="12">
+        <button onclick="getMonthDays()">Get Month & Days</button>
+        <p id="result"></p>
+        <p id="error"></p>
+    </div>
+
+    <script>
+        function getMonthDays() {
+            const month = parseInt(document.getElementById('month').value);
+            let monthName, days;
+
+            document.getElementById('result').innerText = "";
+            document.getElementById('error').innerText = "";
+
+            if (isNaN(month) || month < 1 || month > 12) {
+                document.getElementById('error').innerText = "❌ Please enter a valid number between 1 and 12.";
+                return;
+            }
+
+            switch (month) {
+                case 1:
+                    monthName = "January"; days = 31; break;
+                case 2:
+                    monthName = "February"; days = 28; break;
+                case 3:
+                    monthName = "March"; days = 31; break;
+                case 4:
+                    monthName = "April"; days = 30; break;
+                case 5:
+                    monthName = "May"; days = 31; break;
+                case 6:
+                    monthName = "June"; days = 30; break;
+                case 7:
+                    monthName = "July"; days = 31; break;
+                case 8:
+                    monthName = "August"; days = 31; break;
+                case 9:
+                    monthName = "September"; days = 30; break;
+                case 10:
+                    monthName = "October"; days = 31; break;
+                case 11:
+                    monthName = "November"; days = 30; break;
+                case 12:
+                    monthName = "December"; days = 31; break;
+            }
+
+            document.getElementById('result').innerText = `${monthName}, ${days} days`;
+        }
+    </script>
+</body>
+</html>

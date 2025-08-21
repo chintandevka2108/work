@@ -1,0 +1,515 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+  }
+  
+  .navbar {
+    background-color: #faf4f4;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    color: rgb(14, 12, 12);
+  }
+  
+  .navbar-brand {
+    font-size: 24px;
+   
+    font-weight: bold;
+  }
+  
+  .navbar-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .navbar-nav li {
+    position: relative;
+  }
+  
+  .navbar-nav a {
+    display: block;
+    color: rgb(88, 80, 80);
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+  }
+  .navbar-nav::before{
+    text-decoration: none;
+    transition: all 0.10s;
+    position: absolute;
+  }
+  .navbar-nav:hover{
+    text-decoration: underline;
+    color:greenyellow;
+  }
+  .button{
+      background-color: #faf4f4;
+  }
+  .login
+{
+    
+    height: 100%;
+    width: 25%; color: rgb(230, 148, 148);
+    display: flex;
+    align-items: center;
+    place-content: center;
+    justify-content: space-evenly;
+    /* border: 1px solid #000; */
+}
+.login input{
+    height: 50px; padding: 0% 0% 0% 3%;
+    width: 250px; background: none;
+    border-radius: 50px; display: none;
+}
+.home
+{
+    height: 90vh;
+    width: 100%;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 49% 50%;
+    /* border: 1px solid #000; */
+}
+.ho-1
+{
+    height: 100%;
+    width: 100%;
+    /* border: 1px solid #000; */
+}
+.ho-1 img
+{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    /* border: 1px solid #000; */
+}
+.text{
+    position: absolute;
+    margin: 17% 3%;
+    font-size: 1.2rem;    
+}
+.text h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom:3%;
+}
+.text button
+{
+    height: 60px; width: 130px;
+    background: none;border: none;
+    border-bottom: 3px solid brown; margin-top: 3%; 
+}
+.ho-2
+{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 48% 48%;
+    gap: 10px;
+    /* border: 1px solid #000; */
+}
+.ho-2-1
+{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.7rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(https://preview.colorlib.com/theme/ashion/img/categories/category-2.jpg);
+}
+.ho-2-1 h1{
+    margin: 25% 0% 0% 10%;
+}
+.ho-2-1 p
+{
+    font-size: 1rem;
+    margin: 3% 0% 0% 10%;
+}
+.ho-2-1 button{
+    height: 40px;
+    width: 100px;
+    font-size: 0.7rem;
+    background: none; border: none;
+    border-bottom: 3px solid brown;
+    margin: 3% 0% 0% 10%;
+}
+.ho-2-2
+{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.7rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(https://preview.colorlib.com/theme/ashion/img/categories/category-3.jpg);
+}
+.ho-2-2 h1{
+    margin: 25% 0% 0% 10%;
+}
+.ho-2-2 p
+{
+    font-size: 1rem;
+    margin: 3% 0% 0% 10%;
+}
+.ho-2-2 button{
+    height: 40px;
+    width: 100px;
+    font-size: 0.7rem;
+    background: none; border: none;
+    border-bottom: 3px solid brown;
+    margin: 3% 0% 0% 10%;
+}
+.ho-2-3
+{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.7rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(https://preview.colorlib.com/theme/ashion/img/categories/category-4.jpg);
+}
+.ho-2-3 h1{
+    margin: 25% 0% 0% 10%;
+}
+.ho-2-3 p
+{
+    font-size: 1rem;
+    margin: 3% 0% 0% 10%;
+}
+.ho-2-3 button{
+    height: 40px;
+    width: 100px;
+    font-size: 0.7rem;
+    background: none; border: none;
+    border-bottom: 3px solid brown;
+    margin: 3% 0% 0% 10%;
+}
+.ho-2-4
+{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.7rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(https://preview.colorlib.com/theme/ashion/img/categories/category-5.jpg);
+}
+.ho-2-4 h1{
+    margin: 25% 0% 0% 10%;
+}
+.ho-2-4 p
+{
+    font-size: 1rem;
+    margin: 3% 0% 0% 10%;
+}
+.ho-2-4 button{
+    height: 40px;
+    width: 100px;
+    font-size: 0.7rem;
+    background: none; border: none;
+    border-bottom: 3px solid brown;
+    margin: 3% 0% 0% 10%;
+}
+.new-product
+{
+    height: 145vh;
+    width: 100%;
+    margin-top: 10%;
+    /* border: 3px solid red; */
+}
+.nav-bar{
+    height: 10vh;
+    width: 95%;
+    margin: 0% auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* border: 1px solid #000; */
+}
+.nav-bar h1
+{
+    font-weight: 200;
+}
+.nav-bar a{
+    text-decoration: none;
+    color: black; 
+}
+.product
+{
+    height: auto;
+    width: 95%;
+    display: grid;
+    grid-template-columns: 300px 300px 300px 300px;
+    place-content: center;
+    gap: 30px;
+    margin: 2.5% auto;
+    /* border: 1px solid #000;  */
+}
+.d-1
+{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.d-1 i{
+    height: 50px; width: 50px; background-color: white;
+    border-radius: 50px; padding-top: 13px;
+    position: absolute; font-size: 1.7rem; margin: 17% 0% 0% 1%; 
+}
+.d-1 div{
+    height: 50px; width: 50px; background-color: white;
+    border-radius: 50px; padding-top: 13px; 
+    position: absolute; font-size: 1.7rem; margin: 17% 0% 0% 13.5%;
+}
+.d-1 p{
+    margin-top: 5%;
+}
+.d-1 h1
+{
+    font-size: 1.2rem;
+    font-weight: 500; margin-top: 3%;
+}
+.slide
+{
+    margin-top: 0%;
+    height: 60vh;
+    width: 100%; margin-top: 10%;
+    /* border: 1px solid #000; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(https://preview.colorlib.com/theme/ashion/img/banner/banner-1.jpg);
+}
+.text-1{
+    position: relative;
+    height: auto;
+    top: 28%;
+    width: 40%; 
+    margin: 0% auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.text-1 h4
+{
+    font-weight: 100;
+    font-size: 1rem; margin-top: 7%;
+}
+.text-1 h1
+{
+    font-weight: 100;
+    font-size: 3rem; margin-top: 3%;
+}
+.text-1 button
+{
+    height: 40px;
+    width: 100px; background: none; border: none; border-bottom: 3px solid brown;
+    margin: 3% auto;
+}
+.trand
+{
+    height: 60vh; display: grid; 
+    grid-template-columns: repeat(auto-fill, 33.33%);
+    width: 90%; margin: 10% auto 0%;
+    /* border: 1px solid #000; */
+}
+.hot-trands{
+    height: 100%;
+    width: 100%;
+    /* border: 1px solid #000; */
+}
+.hot-trands h1
+{
+    font-weight: 400;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 5% 0% 5% 6%;
+}
+.td-2 h1
+{
+    font-size: 1.5rem;
+    font-weight: 100; 
+}
+.td
+{
+    display: flex;
+    margin-left: 5%;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.td-2
+{
+    font-size: 1rem;
+    padding-left: 5%;
+    font-weight: 100;
+}
+.td-2 p{
+    margin-top: 5%;
+}
+.td-2 h1
+{
+    font-size: 1rem;
+}
+.td-1 img
+{
+    margin: 20% 6%;
+}
+.discount
+{
+    height: 60vh; display: grid;
+    grid-template-columns: 50% 50%;
+    width: 80%; margin: 10% auto 0%;
+    /* border: 1px solid #000; */
+}
+.dis-1{
+    height: 100%;
+    width: 100%;
+}
+.dis-1 img
+{
+    height: 100%; width: 100%; object-fit: cover; 
+}
+.dis-2{
+    height: 100%;
+    width: 100%; z-index: -1;
+    background-color: #f4f4f4;
+}
+.dis-2 button
+{
+    height: 40px;
+    width: 120px; background: none;
+    border: none; margin: 5% 42%;
+    border-bottom: 3px solid brown;
+}
+.text-2{
+    height: 250px; border-radius: 150px; 
+    width: 250px; 
+    background-color: white;
+    margin: 2% auto;
+}
+.text-2 p{
+    text-align: center;
+    padding-top: 20%; 
+}
+.text-2 h1{
+    text-align: center;
+    padding-top: 10%;
+    font-size: 2.5rem; color: brown; 
+}
+.text-2 h4{
+    text-align: center;
+    padding-top: 10%;
+    font-size: 1rem; 
+}
+.text-2 span{
+    text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.2rem; color: brown; margin-left: 5%; font-weight: 600;
+}
+.image
+{
+    margin: 10% 0% 10% 0%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit , 16.66%);
+}  
+.image img{
+    height: 50vh;
+    width: 100%;
+} 
+/* image 1 */
+.insta{
+    position: absolute;
+    height: 50vh; 
+    width: 34.9vh; background-color: white; 
+    opacity: 0;
+}
+.insta i
+{
+    margin: 50% 0% 0% 45%;
+    font-size: 3rem;
+}
+.insta h1{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+}
+.insta:hover{
+    opacity: 0.9;
+}
+/* image 2 */
+.insta-1{
+    position: absolute;
+    height: 50vh; margin-left: 16.66%;
+    width: 34.9vh; opacity: 0;
+     transition: opacity 0.5s;
+}
+.insta-1 i
+{
+    margin: 50% 0% 0% 45%;
+    font-size: 3rem;
+}
+.insta-1 h1{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+}
+/* image 3 */
+.insta-2{
+    position: absolute;
+    height: 50vh; margin-left: 33.32%;
+    width: 34.9vh; opacity: 0;
+    transition: opacity 0.5s;
+}
+.insta-2 i
+{
+    margin: 50% 0% 0% 45%;
+    font-size: 3rem;
+}
+.insta-2 h1{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+}
+/* .image 4 */
+.insta-3{
+    position: absolute;
+    height: 50vh; margin-left: 49.98%;
+    width: 34.9vh; opacity: 0;
+    transition: opacity 0.5s;
+}
+.insta-3 i
+{
+    margin: 50% 0% 0% 45%;
+    font-size: 3rem;
+}
+.insta-3 h1{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+}
+/* image 5 */
+.insta-4{
+    position: absolute;
+    height: 50vh; margin-left: 66.64%;
+    width: 34.9vh; opacity: 0; 
+    transition: opacity 0.5s;
+}
+.insta-4 i
+{
+    margin: 50% 0% 0% 45%;
+    font-size: 3rem;
+}
+.insta-4 h1{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+}
+/* image 6 */
+.insta-5{
+    position: absolute;
+    height: 50vh; margin-left: 83.25%;
+    width: 34.9vh; opacity: 0;
+    transition: opacity 0.3s;
+}
+.insta-5 i
+{
+    margin: 50% 0% 0% 45%;
+    font-size: 3rem; 
+}
+.insta-5 h1{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+}

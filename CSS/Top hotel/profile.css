@@ -1,0 +1,330 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+.maindiv {
+  height: 60px;
+  width: 80%;
+  display: flex;
+  align-items: center;
+}
+
+.nav_logo {
+  width: 200px;
+  height: 60px;
+  margin-left: 150px;
+  align-items: center;
+}
+
+.nav_logo img {
+  height: 40px;
+  width: 200px;
+}
+
+/* nav search bar */
+
+.nav_search {
+  width: 400px;
+  height: 60px;
+  display: flex;
+  margin-left: 30px;
+  align-items: center;
+}
+
+.nav_btn {
+  height: 45px;
+  width: 50px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: white;
+  border-right: none;
+}
+
+.search input {
+  height: 45px;
+  width: 350px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-left: none;
+}
+
+/* menu bar */
+
+.menudiv {
+  height: 45px;
+  width: 530px;
+  margin-left: 30px;
+  align-content: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.menu_btn button {
+  height: 40px;
+  width: 80px;
+  font-size: 14px;
+  font-family: Arial, Tahoma, " Bitstream Vera Sans", sans-serif;
+  border-radius: 20px;
+  background-color: white;
+  border: none;
+}
+
+.menu_btn button:hover {
+  background-color: #eae3e3;
+}
+
+.profile {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  background-image: url(profile_img.png);
+  background-size: cover;
+}
+
+/* --------------panel-------------------- */
+
+.panel {
+  height: 45px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.panel .section {
+  height: 25px;
+  width: 750px;
+  align-items: center;
+  padding-left: 110px;
+}
+
+.panel .section a {
+  font-size: 15px;
+  text-decoration: none;
+  font-family: Arial, Tahoma, " Bitstream Vera Sans", sans-serif;
+  color: black;
+  padding-left: 20px;
+}
+
+/* ------------------add cover photo-------------- */
+
+.photo {
+  height: 250px;
+  width: 100%;
+  background-color: #e0e0e0;
+}
+
+.photo button {
+  height: 250px;
+  width: 20%;
+  position: absolute;
+  left: 40%;
+  background-color: #e0e0e0;
+  border: none;
+  font-size: 14px;
+  font-weight: 700;
+  padding-bottom: 30px;
+}
+
+/* ------------------hero section------------- */
+
+.hero {
+  height: 1250px;
+  width: 100%;
+  background-color: #f2f2f2;
+}
+
+.hero_1 {
+  height: 1270px;
+  width: 80%;
+  position: absolute;
+  left: 10%;
+  top: 315px;
+}
+
+.hero_1_profile1 {
+  height: 160px;
+  width: 100%;
+  background-color: white;
+}
+
+.pro_img {
+  height: 120px;
+  width: 120px;
+  border-radius: 120px;
+  background-image: url(profile_img.png);
+  background-size: cover;
+}
+
+.pro_txt {
+  width: 500px;
+  position: absolute;
+  top: 20px;
+  left: 150px;
+}
+
+.pro_txt p {
+  font-size: 25px;
+  font-weight: 700;
+  height: 50px;
+}
+
+.follow {
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-around;
+}
+
+.setting_btn button {
+  height: 30px;
+  width: 150px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: white;
+}
+
+.hero_panel {
+  height: 45px;
+  width: 100%;
+  background-color: white;
+  position: sticky;
+  top: 0px;
+}
+
+.hero_panel ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  padding-top: 10px;
+  padding-left: 25px;
+  margin: 0;
+}
+
+.hero_1_profile2 {
+  height: 1045px;
+  width: 1000px;
+  margin: 20px 0px 20px 0px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pro1 {
+  height: 350px;
+  width: 300px;
+  padding-left: 20px;
+  padding-top: 30px;
+  background-color: white;
+}
+
+.pro1 h1 {
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.pro1 button {
+  height: 50px;
+  width: 275px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 13px;
+  background-color: white;
+}
+
+.pro1 button p {
+  font-size: 12px;
+}
+
+.pro1_btn button {
+  height: 50px;
+  width: 275px;
+  border-radius: 100px;
+  background-color: black;
+  font-weight: 800;
+  color: white;
+}
+
+.pro2 {
+  height: 350px;
+  width: 600px;
+  margin-left: 25px;
+}
+
+.pro2 div {
+  height: 150px;
+  width: 600px;
+  background-color: white;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.pro2 div h1 {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.pro2 div p {
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.pro3 {
+  height: 330px;
+  width: 945px;
+  /* margin-top: 20px; */
+}
+
+.pro3_1 {
+  height: 280px;
+  width: 300px;
+  background-color: white;
+  padding-left: 20px;
+  padding-top: 50px;
+}
+
+.pro4 {
+  height: 200px;
+  width: 300px;
+  font-size: 15px;
+  background-color: white;
+  padding-left: 20px;
+  padding-top: 50px;
+}
+
+/* -----------------------footer----------------- */
+
+.footer {
+  height: 270px;
+  width: 100%;
+  background-color: #faf1ed;
+  display: flex;
+  align-items: center;
+}
+
+.footer_logo {
+  height: 50px;
+  width: 50px;
+  display: flex;
+}
+
+.copyr {
+  font-size: 10px;
+  font-family: "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+}
+
+.copyr a {
+  font-size: 15px;
+}
+
+.copyr pre {
+  font-size: 13px;
+}
+
+.country {
+  width: 200px;
+  height: 35px;
+  border-radius: 10px;
+}

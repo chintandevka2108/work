@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QwikSavings</title>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<!-- FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<!-- Custom CSS -->
+<link rel="stylesheet" href="index.css">
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-white py-2 border-bottom">
+        <div class="container d-flex flex-wrap justify-content-between align-items-center">
+            <!-- Logo -->
+            <img src="logo.webp qwikshop.webp" alt="QwikSavings Logo" class="site-logo">
+            
+            <!-- Navigation Menu -->
+            <nav class="d-md-flex d-flex align-items-center ">
+                <a href="#" class="nav-links mx-2 link active">Stores</a>
+                <a href="#" class="nav-links mx-2 link">Categories</a>
+                <a href="#" class="nav-links mx-2 link">Our Codes</a>
+                <a href="#" class="nav-links mx-2 link">Events</a>
+                <a href="#" class="nav-links mx-2 link">Blogs</a>
+            </nav>
+            
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" placeholder="Search for brands, categories" />
+                <button type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16px" height="16px">
+                        <path d="M10 2a8 8 0 105.293 14.293l4.853 4.854a1 1 0 001.414-1.414l-4.854-4.853A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z" />
+                    </svg>
+                </button>
+            </div>       
+            <!-- Login and Sign-Up Buttons -->
+            <div class="but d-flex mt-3 mt-md-0">
+                <button class="but  me-2">Login</button>
+            </div>
+            <div class="butt d-flex mt-3 mt-md-0">
+                <button class="but  ">Sign Up</button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+                <li class="breadcrumb-item"><a href="#">Stores</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Adidas</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="error-message">
+            Error fetching store details
+        </div>
+    </main>
+
+    <!-- Footer -->
+<!-- Footer -->
+<footer class="footer bg-light py-4" style="border: 1px solid #970f3c;">
+    <div class="container">
+        <div class="row">
+            <!-- Footer Logo and Description -->
+            <div class="col-md-4">
+                <img src="https://qwiksavings.com/_next/image?url=%2FLogos%2FFooterLogo.png&w=1920&q=75" alt="QwikSavings Logo" class="img-fluid mb-3" style="max-height: 150px;">
+                <p class="t" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size: 15px;">
+                    Qwik Savings, as the name suggests, is your go-to destination for quick savings. It helps you save faster than other websites in the market by providing hand-tested coupon codes or offers. We guarantee that each of our codes works; if it doesn’t, we’ll give you a gift card so you can treat yourself on us.
+                </p>
+            </div>
+
+            <!-- Useful Reads -->
+            <div class="col-md-2 mt-5">
+                <h5 class="fw-bold">Useful Reads</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Codes</a></li>
+                    <li><a href="#">Savings Events</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">How It Works</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Submit A Coupon</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal -->
+            <div class="col-md-2 mt-5">
+                <h5 class="fw-bold">Legal</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Advertise With Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms Of Service</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="col-md-4 mt-5">
+                <h5 class="fw-bold">Join Our Newsletter</h5>
+                <p>To get the verified and hand-tested Coupons or deals alerts.</p>
+                <form class="d-flex mb-2">
+                    <input type="email" class="form-control me-2" placeholder="Enter Your Email Address" required>
+                    <button type="submit" class="btn btn-danger">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <hr class="my-4">
+
+        <!-- Social Media and Copyright -->
+    
+        <div class="text-center mt-3 ic">
+            <a href="#" class="me-3"><i class="fab fa-facebook fa-lg"></i></a>
+            <a href="#" class="me-3"><i class="fab fa-twitter fa-lg"></i></a>
+            <a href="#" class="me-3"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="#" class="me-3"><i class="fab fa-pinterest fa-lg"></i></a>
+            <a href="#" class="me-3"><i class="fab fa-linkedin fa-lg"></i></a>
+            <a href="#"><i class="fab fa-youtube fa-lg"></i></a>
+            
+        </div>
+        <div class="row ">
+            <div class="col-md-10 text-md-center">
+                <p class="small mb-1">
+                    Disclosure: If you buy a product or service through Qwik Savings, we may earn a commission. <br><br>
+                    2024 QwikSavings.com. All rights reserved. </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        $(document).ready(function () {
+            $('.error-message').hide().fadeIn(1000);
+        });
+    </script>
+</body>
+</html>

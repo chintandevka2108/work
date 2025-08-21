@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      background-image: url('https://wallpapers.com/images/hd/restaurant-background-ua09rq3u85yphzt4.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+    #cake {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .img {
+      height: 200px;
+      width: 200px;
+      object-fit: cover;
+      border: 2px solid #f71515;
+      border-radius: 10px;
+    }
+    #h{
+      margin-left: 42%;
+      color: rgb(174, 183, 192);
+    
+    }
+   #main input{
+    margin-left: 42%;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   }
+   #btn{
+    margin-top: 2%;
+    margin-left: 45%;
+    background-color: darkgreen;
+    color: #ccc;
+    border-radius: 20%;
+   }
+   .item{
+    color: #c70c0c;
+   }
+   .Category{
+    color: #ccc;
+    justify-content: center;
+   }
+  </style>
+</head>
+<body>
+  <h1 id="h">MealAPI</h1>
+  <div id="main">
+    <input type="text" id="meal" placeholder="Enter Your Meal">
+  </div>
+  <button id="btn">Search</button>
+  <div id="cake"></div>
+</body>
+<script>
+  let btn = document.getElementById("btn");
+
+  async function data() {
+    let br = document.getElementById("meal").value;
+
+    let res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${br}`);
+    res = await res.json();
+
+    display(res);
+    console.log(res);
+  }
+
+  btn.addEventListener("click", () => {
+    data();
+  });
+
+  function display(data) {
+    let cakeDiv = document.getElementById("cake");
+
+    cakeDiv.innerHTML = "";
+
+   
+
+    data.meals.forEach((el) => {
+      let innerDiv = document.createElement("div");
+
+      let img = document.createElement("img");
+      img.src = el.strMealThumb;
+      img.className = "img";
+
+      let name = document.createElement("p");
+      name.textContent = el.strMeal;
+      name.className = "item"
+
+      let Category = document.createElement("p");
+      Category.textContent = el.strCategory;
+      Category.className = "Category"
+
+      innerDiv.append(img, name, Category);
+      cakeDiv.append(innerDiv);
+    });
+  }
+</script>
